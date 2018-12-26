@@ -4,7 +4,11 @@
   "description": "BDD test for SanDisk web-site",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "webdriver-manager update",
+    "preinstall" : "mkdir reports",
+    "e2e":"protractor ./test/e2e/config/config.js",
+    "e2e:update":"webdriver-manager update",
+    "e2e:start-server":"start cmd /k \"node_modules\\.bin\\webdriver-manager start\""
   },
   "repository": {
     "type": "git",
@@ -16,7 +20,16 @@
     "url": "https://github.com/Duchannes/SanDisk-Cucumber-Tests/issues"
   },
   "homepage": "https://github.com/Duchannes/SanDisk-Cucumber-Tests#readme",
-  "dependencies": {},
+  "dependencies": {
+    "chai": "^4.1.2",
+    "cucumber": "^5.0.3",
+    "cucumber-html-reporter": "^4.0.4",
+    "protractor": "^5.4.2",
+    "protractor-cucumber-framework": "^6.1.1",
+    "winston": "^3.1.0",
+    "yargs": "^12.0.5"
+  },
+  
   "devDependencies": {
     "eslint": "^5.11.0",
     "eslint-config-standard": "^12.0.0",
