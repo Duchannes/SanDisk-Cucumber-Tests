@@ -11,15 +11,14 @@ let logger = createLogger({
     }),
     new transports.File({
       format: format.combine(
-        format.json(),
-        format.timestamp(),
+        format.timestamp({ format: `YYYY-MM-DD HH:mm:ss` }),
         format.simple()
       ),
       filename: `combined.log`
     }),
     new transports.File({
       format: format.combine(
-        format.json(),
+        format.timestamp({ format: `YYYY-MM-DD HH:mm:ss` }),
         format.simple()
       ),
       level: `error`,
