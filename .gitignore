@@ -87,7 +87,3 @@ lerna-debug.log
 # System Files
 .DS_Store
 Thumbs.db
-
-# My files
-result/
-response.json
