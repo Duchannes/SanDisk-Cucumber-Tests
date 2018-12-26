@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "webdriver-manager update",
-    "preinstall" : "mkdir reports",
-    "e2e":"protractor ./test/e2e/config/config.js",
-    "e2e:update":"webdriver-manager update",
-    "e2e:start-server":"start cmd /k \"node_modules\\.bin\\webdriver-manager start\""
+    "preinstall": "mkdir reports",
+    "e2e": "protractor ./test/SanDisk/config/config.js",
+    "e2e:update": "webdriver-manager update",
+    "e2e:start-server": "start cmd /k \"node_modules\\.bin\\webdriver-manager start\""
   },
   "repository": {
     "type": "git",
@@ -29,7 +29,6 @@
     "winston": "^3.1.0",
     "yargs": "^12.0.5"
   },
-  
   "devDependencies": {
     "eslint": "^5.11.0",
     "eslint-config-standard": "^12.0.0",
