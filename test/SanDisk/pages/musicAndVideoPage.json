@@ -1,0 +1,17 @@
+{
+    "Musik And Video Title":{
+        "isCollection": "false",
+        "type": "css",
+        "selector": ".dr_categoryName"
+    },
+    "List Of Products":{
+        "isCollection": "false",
+        "type": "css",
+        "selector": "a.dr_productName"
+    },
+    "Sandisk Clip Sport Plus Black":{
+        "isCollection": "false",
+        "type": "css",
+        "selector": "a.dr_button[href *=\"5217951800\"]"
+    }
+}
