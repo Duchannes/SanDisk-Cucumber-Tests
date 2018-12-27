@@ -1,34 +1,41 @@
 {
-    "Icon Search": {
-        "isCollection": false,
+    "Search Icon": {
         "type": "id",
         "selector": "searchIcon"
     },
     "Search Field": {
-        "isCollection": false,
         "type": "css",
         "selector": ".ui-autocomplete-input"
     },
     "Search Button": {
-        "isCollection": false,
         "type": "id",
         "selector": "dr_searchbutton"
     },
-    "Products": {
+    "List of products by searching": {
         "isCollection": true,
         "type": "css",
         "selector": "a.dr_productName"
     },
-    "topSellersBuyBtn": {
+    "Products Menu": {
+        "type": "css",
+        "selector": "li.dropdown"
+    },
+    "Type of Products": {
+        "isCollection": true,
+        "type": "css",
+        "selector": "li[id*='dr_catID']"
+    },
+    "Buy Now Button": {
         "isCollection": true,
         "type": "css",
         "selector": ".offer-text .dr_button"
     },
-    "basketIcon": {
+    "Basket Icon": {
         "type": "css",
         "selector": "i[class$=\"basket\"]"
     },
-    "prodNameInBasket": {
+    "Product Name In Basket": {
+        "isCollection": true,
         "type": "css",
         "selector": ".dr_prod-name"
     }

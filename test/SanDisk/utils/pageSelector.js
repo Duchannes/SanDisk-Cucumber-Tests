@@ -58,6 +58,7 @@ export class PageSelector {
   }
 
   getPage () {
+    // eslint-disable-next-line no-undef
     const currUrl = browser.getCurrentUrl();
     if (this.currUrl !== currUrl) {
       this.currUrl = currUrl;

@@ -3,5 +3,15 @@
         "isCollection": true,
         "type": "css",
         "selector": ".dr_productName"
+    },
+    "Wireless Radio Button": {
+        "isCollection": true,
+        "type": "css",
+        "selector": "label [value*=wireless]"
+    },
+    "Learn More Button": {
+        "isCollection": true,
+        "type": "css",
+        "selector": "a[class$='Item']"
     }
 }
