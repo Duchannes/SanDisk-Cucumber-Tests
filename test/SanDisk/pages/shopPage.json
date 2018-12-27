@@ -28,7 +28,7 @@
         "type": "css",
         "selector": "i[class$=\"basket\"]"
     },
-    "product Name in Basket": {
+    "Product Name In Basket": {
         "type": "css",
         "selector": ".dr_prod-name"
     }
