@@ -5,7 +5,7 @@ const logger = require(path.resolve(`./test/SanDisk/config/loggerConfig.js`)).lo
 const PagesEnum = {
   "MAIN": {
     po: require(path.resolve(`./test/SanDisk/pages/mainPage.json`)),
-    symptomes: [/^https:\/\/www.sandisk.com$/]
+    symptomes: [/^https:\/\/www\.sandisk\.com\/$/]
   },
   "CHECKOUT": {
     po: require(path.resolve(`./test/SanDisk/pages/checkoutPage.json`)),
@@ -21,7 +21,7 @@ const PagesEnum = {
   },
   "SHOP": {
     po: require(path.resolve(`./test/SanDisk/pages/shopPage.json`)),
-    symptomes: [/\/store\?Action=DisplayHomePage/, /\/store\/sdiskus\/home$/]
+    symptomes: [/\/store\?Action=DisplayHomePage/, /\/store\/sdiskus\/home\/$/]
   },
   "SHOPPINGCART": {
     po: require(path.resolve(`./test/SanDisk/pages/shoppingCartPage.json`)),
@@ -29,41 +29,45 @@ const PagesEnum = {
   },
   "USBFLASH": {
     po: require(path.resolve(`./test/SanDisk/pages/usbFlashPage.json`)),
-    symptomes: [/\/home\/usb-flash$/]
+    symptomes: [/\/home\/usb-flash\/$/]
   },
   "USBFLASHPRODUCT": {
     po: require(path.resolve(`./test/SanDisk/pages/usbFlashProductPage.json`)),
-    symptomes: [/\/home\/usb-flash\//]
+    symptomes: [/\/home\/usb-flash\/(?!$)/]
   }
 };
 
 function choosePage () {
+  let page;
   for (const key in PagesEnum) { // Check every ENUM page
     PagesEnum[key].symptomes.forEach(simptome => { // For each symptome
       if (this.currUrl.search(simptome) >= 0) {
         if (this.currPage !== key) { // Is page changed?
+          page = key;
           logger.debug(`PageObject changed to - ${key}`);
-          this.currPage = key; // Change page
         }
       }
     });
     break;
   }
+  return page;
 }
 
-export class PageSelector {
+class PageSelector {
   constructor () {
     this.currUrl = null;
     this.currPage = null;
   }
 
-  getPage () {
+  async getPage () {
     // eslint-disable-next-line no-undef
-    const currUrl = browser.getCurrentUrl();
+    const currUrl = await browser.getCurrentUrl();
     if (this.currUrl !== currUrl) {
       this.currUrl = currUrl;
-      choosePage.bind(this)();
+      this.currPage = choosePage.bind(this)();
       return PagesEnum[this.currPage].po;
     }
   }
 }
+
+module.exports = PageSelector;

@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 const path = require(`path`);
 const yargs = require(`yargs`);
+const logger = require(path.resolve(`./test/SanDisk/config/loggerConfig.js`)).logger;
 
 exports.config = {
   allScriptsTimeout: 20000,
