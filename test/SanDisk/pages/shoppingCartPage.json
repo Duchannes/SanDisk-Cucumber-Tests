@@ -3,5 +3,15 @@
         "isCollection" : "false",
         "type" : "css",
         "selector" : "a[title = 'Remove']"
+    },
+    "shoppingCartItem": {
+        "isCollection": true,
+        "type": "css",
+        "selector": "tbody> tr[class*=dr]"
+    },
+    "itemName": {
+        "isCollection": true,
+        "type": "css",
+        "selector": "td[class$=Name] > a"
     }
 }

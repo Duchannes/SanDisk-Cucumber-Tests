@@ -1,0 +1,7 @@
+{
+    "productNameLink": {
+        "isCollection": true,
+        "type": "css",
+        "selector": ".dr_productName"
+    }
+}

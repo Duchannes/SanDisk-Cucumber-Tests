@@ -1,0 +1,22 @@
+{
+    "Products menu": {
+        "isCollection": false,
+        "type": "css",
+        "selector": "li.dropdown"
+    },
+    "Products": {
+        "isCollection": true,
+        "type": "css",
+        "selector": "li[id*='dr_catID']"
+    },
+    "Search Button": {
+        "isCollection": false,
+        "type": "css",
+        "selector": ".dr_categoryName"
+    },
+    "Sort By": {
+        "isCollection": true,
+        "type": "css",
+        "selector": "#dr_ordering"
+    }
+}
