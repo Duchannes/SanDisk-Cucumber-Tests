@@ -1,27 +1,22 @@
 {
-    "SandDisk Image":{
-    "isCollection" : "false",
+    "SanDisk Image":{
     "type" : "css",
     "selector" : "a[href = \"/\"]>img"
     },
     
-    "USB FLASH":{
-        "isCollection" : "false",
+    "Usb Flash Reference":{
         "type": "css",
         "selector": ".navbar a[href*='usb']"
     },
-    "SSD":{
-        "isCollection" : "false",
+    "Ssd Reference":{
         "type": "css",
         "selector":".navbar a[href*='ssd']"
     },
-    "SHOP NOW":{
-        "isCollection": "false",
+    "Shop Now Reference":{
         "type": "css",
         "selector" : ".navbar [href*='shop']"
     },
-    "EXTREME":{
-        "isCollection": "false",
+    "Extreme Reference":{
         "type": "css",
         "selector" : ".navbar [href*='extreme']"
     }

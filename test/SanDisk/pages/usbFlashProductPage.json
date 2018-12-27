@@ -1,0 +1,31 @@
+{
+    "Where To Buy ":{
+        "type": "css",
+        "selector": "a[href = '#where-to-buy']"
+    },
+
+    "Select Region":{
+        "type":"id",
+        "selector":"region"
+    },
+
+    "Select Area":{
+        "type":"id",
+        "selector":"country-box"
+    },
+
+    "Option Europe":{
+        "type":"css",
+        "selector":"option[label= 'Europe']"
+    },
+
+    "Option Belarus":{
+        "type":"css",
+        "selector":"option[label= 'Belarus']"
+    },
+    
+    "Result Found Title":{
+        "type":"css",
+        "selector":"h3.ng-binding"
+    }
+}
