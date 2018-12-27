@@ -1,4 +1,24 @@
 {
+    "Icon Search": {
+        "isCollection": false,
+        "type": "id",
+        "selector": "searchIcon"
+    },
+    "Search Field": {
+        "isCollection": false,
+        "type": "css",
+        "selector": ".ui-autocomplete-input"
+    },
+    "Search Button": {
+        "isCollection": false,
+        "type": "id",
+        "selector": "dr_searchbutton"
+    },
+    "Products": {
+        "isCollection": true,
+        "type": "css",
+        "selector": "a.dr_productName"
+    },
     "topSellersBuyBtn": {
         "isCollection": true,
         "type": "css",
@@ -12,5 +32,4 @@
         "type": "css",
         "selector": ".dr_prod-name"
     }
-
 }
