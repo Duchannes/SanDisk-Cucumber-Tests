@@ -1,0 +1,29 @@
+{
+    "SandDisk Image":{
+    "isCollection" : "false",
+    "type" : "css",
+    "selector" : "a[href = \"/\"]>img"
+    },
+    
+    "USB FLASH":{
+        "isCollection" : "false",
+        "type": "css",
+        "selector": ".navbar a[href*='usb']"
+    },
+    "SSD":{
+        "isCollection" : "false",
+        "type": "css",
+        "selector":".navbar a[href*='ssd']"
+    },
+    "SHOP NOW":{
+        "isCollection": "false",
+        "type": "css",
+        "selector" : ".navbar [href*='shop']"
+    },
+    "EXTREME":{
+        "isCollection": "false",
+        "type": "css",
+        "selector" : ".navbar [href*='extreme']"
+    }
+    
+}
