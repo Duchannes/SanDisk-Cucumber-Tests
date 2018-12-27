@@ -1,4 +1,9 @@
 {
+    "Delete Product Icon":{
+        "isCollection" : "false",
+        "type" : "css",
+        "selector" : "a[title = 'Remove']"
+    },
     "shoppingCartItem": {
         "isCollection": true,
         "type": "css",

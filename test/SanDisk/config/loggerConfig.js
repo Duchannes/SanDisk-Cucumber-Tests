@@ -10,19 +10,20 @@ let logger = createLogger({
       )
     }),
     new transports.File({
+      filename: `./logs/error.log`,
+      level: `error`,
       format: format.combine(
         format.timestamp({ format: `YYYY-MM-DD HH:mm:ss` }),
         format.simple()
-      ),
-      filename: `combined.log`
+      )
     }),
     new transports.File({
+      filename: `./logs/debug.log`,
+      level: `debug`,
       format: format.combine(
         format.timestamp({ format: `YYYY-MM-DD HH:mm:ss` }),
         format.simple()
-      ),
-      level: `error`,
-      filename: `error.log`
+      )
     })
   ]
 });
