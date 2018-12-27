@@ -25,16 +25,17 @@
         "type": "css",
         "selector": "li[id*='dr_catID']"
     },
-    "topSellersBuyBtn": {
+    "Buy Now Button": {
         "isCollection": true,
         "type": "css",
         "selector": ".offer-text .dr_button"
     },
-    "basketIcon": {
+    "Basket Icon": {
         "type": "css",
         "selector": "i[class$=\"basket\"]"
     },
-    "prodNameInBasket": {
+    "Product Name In Basket": {
+        "isCollection": true,
         "type": "css",
         "selector": ".dr_prod-name"
     }
