@@ -1,11 +1,5 @@
 {
-    "productNameLink": {
-        "isCollection": true,
-        "type": "css",
-        "selector": ".dr_productName"
-    },
     "Wireless Radio Button": {
-        "isCollection": true,
         "type": "css",
         "selector": "label [value*=wireless]"
     },

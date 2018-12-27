@@ -1,0 +1,6 @@
+{
+    "Capacity Button 128GB": {
+        "type": "css",
+        "selector": "#skuCapacityNumber2"
+    }
+}

@@ -1,8 +1,4 @@
 {
-    "Search Button": {
-        "type": "css",
-        "selector": ".dr_categoryName"
-    },
     "Sort By Menu": {
         "type": "id",
         "selector": "dr_ordering"
@@ -12,14 +8,23 @@
         "type": "css",
         "selector": "option[value]"
     },
+    "Category Title":  {
+        "type": "css",
+        "selector": ".dr_categoryName"
+    },
     "Products Price": {
         "isCollection": true,
         "type": "css",
         "selector": "div.dr_price"
     },
-    "Products Name": {
+    "Product Item Name": {
         "isCollection": true,
         "type": "css",
-        "selector": "a.dr_productName"
+        "selector": "#dr_ordering"
+    },
+    "Capacity Button Selector": {
+        "isCollection": true,
+        "type": "css",
+        "selector": ".dr_facetValue [href$=true]"
     }
 }
