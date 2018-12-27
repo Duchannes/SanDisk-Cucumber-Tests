@@ -1,0 +1,14 @@
+{
+    "SandDisk Image":{
+    "isCollection" : "false",
+    "type" : "css",
+    "selector" : "a[href = \"/\"]>img"
+    },
+    
+    "USB FLASH":{
+     "isCollection" : "true",
+     "type" :"css",
+     "selector" : "ul.nav.navbar-nav"
+    }
+    
+}
