@@ -1,1 +1,10 @@
-{}
+{
+    "Buy Now Button": {
+        "type": "css",
+        "selector": "input#buyNowButton"
+    },
+    "Select Capacity": {
+        "type": "css",
+        "selector": "form select"
+    }
+}

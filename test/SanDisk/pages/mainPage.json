@@ -1,22 +1,22 @@
 {
-    "SandDisk Image":{
-        "type" : "css",
-        "selector" : "a[href = \"/\"]>img"
+    "SanDisk Image":{
+    "type" : "css",
+    "selector" : "a[href = \"/\"]>img"
     },
-    "USB FLASH":{
+    
+    "Usb Flash Reference":{
         "type": "css",
         "selector": ".navbar a[href*='usb']"
     },
-    "SSD":{
+    "Ssd Reference":{
         "type": "css",
         "selector":".navbar a[href*='ssd']"
     },
-    "SHOP NOW":{
-        
+    "Shop Now Reference":{
         "type": "css",
         "selector" : ".navbar [href*='shop']"
     },
-    "EXTREME":{
+    "Extreme Reference":{
         "type": "css",
         "selector" : ".navbar [href*='extreme']"
     }

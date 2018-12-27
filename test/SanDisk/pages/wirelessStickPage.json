@@ -1,0 +1,11 @@
+{
+    "Capacity Button 128GB": {
+        "type": "css",
+        "selector": "#skuCapacityNumber2"
+    },
+    
+    "Buy Sandisk Connect Button":{
+        "type": "css",
+        "selector": "#skuDetailsNumber0 a"
+    }
+}
