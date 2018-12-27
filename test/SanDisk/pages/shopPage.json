@@ -1,0 +1,16 @@
+{
+    "topSellersBuyBtn": {
+        "isCollection": true,
+        "type": "css",
+        "selector": ".offer-text .dr_button"
+    },
+    "basketIcon": {
+        "type": "css",
+        "selector": "i[class$=\"basket\"]"
+    },
+    "prodNameInBasket": {
+        "type": "css",
+        "selector": ".dr_prod-name"
+    }
+
+}

@@ -1,0 +1,12 @@
+{
+    "shoppingCartItem": {
+        "isCollection": true,
+        "type": "css",
+        "selector": "tbody> tr[class*=dr]"
+    },
+    "itemName": {
+        "isCollection": true,
+        "type": "css",
+        "selector": "td[class$=Name] > a"
+    }
+}
