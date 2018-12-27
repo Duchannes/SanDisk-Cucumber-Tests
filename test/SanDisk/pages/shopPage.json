@@ -21,7 +21,6 @@
         "selector": "li.dropdown"
     },
     "Type of Products": {
-        "isCollection": true,
         "type": "css",
         "selector": "li[id*='dr_catID']"
     },

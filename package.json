@@ -7,7 +7,7 @@
     "postinstall": "webdriver-manager update",
     "preinstall": "mkdir reports && mkdir logs",
     "sd": "protractor ./test/SanDisk/config/config.js",
-    "sd:update": "webdriver-manager update",
+    "sd:update": "node ./node_modules/protractor/bin/webdriver-manager update --gecko=false",
     "sd:start-server": "start cmd /k \"node_modules\\.bin\\webdriver-manager start\"",
     "sd:generate-report": "node ./test/SanDisk/config/reporter.js"
   },
