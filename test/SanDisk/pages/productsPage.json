@@ -9,8 +9,7 @@
         "type": "css",
         "selector": "li[id*='dr_catID']"
     },
-    "Search Button": {
-        "isCollection": false,
+    "Category Title": {
         "type": "css",
         "selector": ".dr_categoryName"
     },
@@ -18,5 +17,15 @@
         "isCollection": true,
         "type": "css",
         "selector": "#dr_ordering"
+    },
+    "Product Item Name": {
+        "isCollection": true,
+        "type": "css",
+        "selector": "#dr_ordering"
+    },
+    "Capacity Button Selector": {
+        "isCollection": true,
+        "type": "css",
+        "selector": ".dr_facetValue [href$=true]"
     }
 }
