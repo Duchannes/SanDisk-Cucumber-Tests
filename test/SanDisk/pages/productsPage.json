@@ -1,22 +1,21 @@
 {
-    "Products menu": {
-        "isCollection": false,
-        "type": "css",
-        "selector": "li.dropdown"
-    },
-    "Products": {
-        "isCollection": true,
-        "type": "css",
-        "selector": "li[id*='dr_catID']"
-    },
-    "Category Title": {
-        "type": "css",
-        "selector": ".dr_categoryName"
+    "Sort By Menu": {
+        "type": "id",
+        "selector": "dr_ordering"
     },
     "Sort By": {
         "isCollection": true,
         "type": "css",
-        "selector": "#dr_ordering"
+        "selector": "option[value]"
+    },
+    "Category Title":  {
+        "type": "css",
+        "selector": ".dr_categoryName"
+    },
+    "Products Price": {
+        "isCollection": true,
+        "type": "css",
+        "selector": "div.dr_price"
     },
     "Product Item Name": {
         "isCollection": true,
