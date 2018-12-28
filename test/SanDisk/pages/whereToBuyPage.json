@@ -1,12 +1,17 @@
 {
+    "To Find A Store Text": {
+        "type": "css",
+        "selector": "h3[class*='no']"
+    },
+    
     "Select Region":{
-        "type":"id",
-        "selector":"region"
+        "type":"css",
+        "selector":"#region"
     },
 
     "Select Area":{
-        "type":"id",
-        "selector":"country-box"
+        "type":"css",
+        "selector":"#country-box"
     },
 
     "Option Europe":{
@@ -18,7 +23,7 @@
         "type":"css",
         "selector":"option[label= 'Belarus']"
     },
-    
+
     "Result Found Title":{
         "type":"css",
         "selector":"h3.ng-binding"
