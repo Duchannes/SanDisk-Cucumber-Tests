@@ -37,22 +37,17 @@ const PagesEnum = {
   }
 };
 
-function choosePage (currUrl) {
+async function getPage () {
+  // eslint-disable-next-line no-undef
+  const currUrl = await browser.getCurrentUrl();
   for (const key in PagesEnum) { // Check every ENUM page
     for (let i = 0; i < PagesEnum[key].symptomes.length; i++) {
       if (currUrl.search(PagesEnum[key].symptomes[i]) >= 0) {
         logger.debug(`PageObject - ${key}`);
-        return key;
+        return PagesEnum[key].po;
       }
     };
   }
-}
-
-async function getPage () {
-  // eslint-disable-next-line no-undef
-  const currUrl = await browser.getCurrentUrl();
-  const currPage = choosePage(currUrl);
-  return PagesEnum[currPage].po;
 }
 
 module.exports = {
