@@ -3,7 +3,7 @@
 let { Then, When, Given } = require(`cucumber`);
 const expect = require(`chai`).expect;
 const path = require(`path`);
-const elementHelper = require(path.resolve(`./test/SanDisk/steps/st1.js`)).getPageObjectElement;
+const elementHelper = require(path.resolve(`./test/SanDisk/steps/stepFunctions.js`)).getPageObjectElement;
 const logger = require(path.resolve(`./test/SanDisk/config/loggerConfig.js`)).logger;
 
 Then(/^Text of "([^"]*)" should( not)? contain "([^"]*)"$/, async (alias, notArg, textToContain) => {
