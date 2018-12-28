@@ -17,6 +17,7 @@ When(/^I wait until "([^"]*)" is (.*)$/, async (alias, shouldBe) => {
   return browser.wait(expectedConditionFunction(element), CLICKABLE_TIMEOUT);
 });
 
+// TODO add NEXT, PREVIOUS Tab selection
 When(/^I wait for "([^"]*)" seconds$/, async (seconods) => {
   logger.info(`I wait for ${seconods} seconds`);
   return browser.sleep(seconods * 1000);
