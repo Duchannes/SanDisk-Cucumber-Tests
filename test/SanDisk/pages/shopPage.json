@@ -1,7 +1,7 @@
 {
     "Search Icon": {
-        "type": "id",
-        "selector": "searchIcon"
+        "type": "css",
+        "selector": ".dr_icon.icon-search"
     },
     "Search Field": {
         "type": "css",
