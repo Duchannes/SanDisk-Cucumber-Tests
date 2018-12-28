@@ -19,6 +19,17 @@
     "Extreme Reference":{
         "type": "css",
         "selector" : ".navbar [href*='extreme']"
+    },
+    "Menu": {
+        "isCollection": true,
+        "type": "css",
+        "selector": ".nav.navbar-nav",
+        "children": {
+            "Extreme Reference": {
+                "type": "css",
+                "selector": "[href*='extreme']"
+            }
+        }
     }
     
 }

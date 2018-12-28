@@ -6,4 +6,4 @@ Feature: Menu
     Given I open "https://www.sandisk.com/" url
     Then Text of "Shop Now Reference" should contain "SHOP NOW"
 
-    When  I click "Shop Now Reference" 
+    When  I click "Menu > Extreme Reference" 
