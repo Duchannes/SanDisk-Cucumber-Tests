@@ -37,37 +37,24 @@ const PagesEnum = {
   }
 };
 
-function choosePage () {
-  let page;
+function choosePage (currUrl) {
   for (const key in PagesEnum) { // Check every ENUM page
-    PagesEnum[key].symptomes.forEach(simptome => { // For each symptome
-      if (this.currUrl.search(simptome) >= 0) {
-        if (this.currPage !== key) { // Is page changed?
-          page = key;
-          logger.debug(`PageObject changed to - ${key}`);
-        }
+    for (let i = 0; i < PagesEnum[key].symptomes.length; i++) {
+      if (currUrl.search(PagesEnum[key].symptomes[i]) >= 0) {
+        logger.debug(`PageObject - ${key}`);
+        return key;
       }
-    });
-    break;
-  }
-  return page;
-}
-
-class PageSelector {
-  constructor () {
-    this.currUrl = null;
-    this.currPage = null;
-  }
-
-  async getPage () {
-    // eslint-disable-next-line no-undef
-    const currUrl = await browser.getCurrentUrl();
-    if (this.currUrl !== currUrl) {
-      this.currUrl = currUrl;
-      this.currPage = choosePage.bind(this)();
-      return PagesEnum[this.currPage].po;
-    }
+    };
   }
 }
 
-module.exports = PageSelector;
+async function getPage () {
+  // eslint-disable-next-line no-undef
+  const currUrl = await browser.getCurrentUrl();
+  const currPage = choosePage(currUrl);
+  return PagesEnum[currPage].po;
+}
+
+module.exports = {
+  getPage
+};
