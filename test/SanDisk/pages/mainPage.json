@@ -1,24 +1,39 @@
 {
-    "SanDisk Image":{
-    "type" : "css",
-    "selector" : "a[href = \"/\"]>img"
+    "SanDisk Image": {
+        "type": "css",
+        "selector": "a[href = \"/\"]>img"
     },
-    
-    "Usb Flash Reference":{
+    "Usb Flash Reference": {
         "type": "css",
         "selector": ".navbar a[href*='usb']"
     },
-    "Ssd Reference":{
+    "Ssd Reference": {
         "type": "css",
-        "selector":".navbar a[href*='ssd']"
+        "selector": ".navbar a[href*='ssd']"
     },
-    "Shop Now Reference":{
+    "Shop Now Reference": {
         "type": "css",
-        "selector" : ".navbar [href*='shop']"
+        "selector": ".navbar [href*='shop']"
     },
-    "Extreme Reference":{
+    "Extreme Reference": {
         "type": "css",
-        "selector" : ".navbar [href*='extreme']"
+        "selector": "[href*='extreme']"
+    },
+    "CHOOSE MAIN": {
+        "isCollection" : true,
+        "type": "css",
+        "selector": ".nav.navbar-nav",
+        "children": {
+            "LI": {
+                "type": "css",
+                "selector": "li",
+                "children":{
+                    "USB":{
+                        "type": "css",
+                        "selector": "a[href *='ssd']"
+                    }
+                }
+            }
+        }
     }
-    
 }

@@ -6,6 +6,12 @@
     "Learn More Button": {
         "isCollection": true,
         "type": "css",
-        "selector": "a[class$='Item']"
+        "selector": "a[class$='Item']",
+        "children": {
+            "SANDISK EXTREME PRO USB 3.1 SOLID STATE FLASH DRIVE":{
+                "type": "css",
+                "selector": "a[href *='extreme-pro-usb']"
+            }
+        }
     }
 }

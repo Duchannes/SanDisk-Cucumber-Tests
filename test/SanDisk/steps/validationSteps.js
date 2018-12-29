@@ -4,6 +4,7 @@ let { Then, When, Given } = require(`cucumber`);
 const expect = require(`chai`).expect;
 const path = require(`path`);
 const elementHelper = require(path.resolve(`./test/SanDisk/steps/stepFunctions.js`)).getPageObjectElement;
+const elementFinder = require(path.resolve(`./test/SanDisk/steps/stepFunctions.js`)).nestedElement;
 const logger = require(path.resolve(`./test/SanDisk/config/loggerConfig.js`)).logger;
 
 Then(/^Text of "([^"]*)" should( not)? contain "([^"]*)"$/, async (alias, notArg, textToContain) => {
@@ -16,5 +17,9 @@ Then(/^Text of "([^"]*)" should( not)? contain "([^"]*)"$/, async (alias, notArg
 
 When(/^I click "([^"]*)"$/, async (alias) => {
   logger.info(`I click ${alias}`);
-  return (await elementHelper(alias)).click();
+  if (alias.includes(`>`)) {
+    let arrayOfAliases = alias.split(` > `);
+    let parentAlias = arrayOfAliases.shift();
+    return (await elementFinder(parentAlias, arrayOfAliases));
+  }
 });
