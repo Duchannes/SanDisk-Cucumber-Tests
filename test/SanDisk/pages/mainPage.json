@@ -1,35 +1,40 @@
 {
-    "SanDisk Image":{
-    "type" : "css",
-    "selector" : "a[href = \"/\"]>img"
+    "SanDisk Image": {
+        "type": "css",
+        "selector": "a[href = \"/\"]>img"
     },
-    
-    "Usb Flash Reference":{
+    "Usb Flash Reference": {
         "type": "css",
         "selector": ".navbar a[href*='usb']"
     },
-    "Ssd Reference":{
+    "Ssd Reference": {
         "type": "css",
-        "selector":".navbar a[href*='ssd']"
+        "selector": ".navbar a[href*='ssd']"
     },
-    "Shop Now Reference":{
+    "Shop Now Reference": {
         "type": "css",
-        "selector" : ".navbar [href*='shop']"
+        "selector": ".navbar [href*='shop']"
     },
-    "Extreme Reference":{
+    "Extreme Reference": {
         "type": "css",
-        "selector" : ".navbar [href*='extreme']"
+        "selector": ".navbar [href*='extreme']"
     },
-    "Menu": {
+    "Navigation Bar": {
         "isCollection": true,
         "type": "css",
-        "selector": ".nav.navbar-nav",
+        "selector": ".section.parbase",
         "children": {
-            "Extreme Reference": {
+            "Menu": {
+                "isCollection": true,
                 "type": "css",
-                "selector": "[href*='extreme']"
+                "selector": ".nav.navbar-nav",
+                "children": {
+                    "Extreme Reference": {
+                        "type": "css",
+                        "selector": "[href*='extreme']"
+                    }
+                }
             }
         }
     }
-    
 }

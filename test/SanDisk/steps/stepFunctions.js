@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 const path = require(`path`);
 const pageSelector = require(path.resolve(`./test/SanDisk/utils/pageSelector.js`));
+const logger = require(path.resolve(`./test/SanDisk/config/loggerConfig.js`)).logger;
 
 let getPageObjectElement = async (alias) => {
   let pageElement = (await pageSelector.getPage())[alias];
@@ -20,25 +21,27 @@ let getJsonObj = async (alias) => {
   return pageElement;
 };
 
-let getIncludedPageObjectElement = async (parentObj, parentElements, ...arrayOfChildAlliases) => {
-  console.log(`---------------------DEBUG ${Object.keys(parentObj.children)} DEBUG-----------------------`);
-  console.log(`---------------------DEBUG ${parentElements} DEBUG-----------------------`);
-  console.log(`---------------------DEBUG ${arrayOfChildAlliases} DEBUG-----------------------`);
+let getIncludedPageObjectElement = async (parentObj, parentElements, arrayOfChildAlliases) => {
+  // console.log(`---------------------DEBUG ${parentObj} DEBUG-----------------------`);
+  // console.log(`---------------------DEBUG ${parentElements.length} DEBUG-----------------------`);
+  // console.log(`---------------------DEBUG ${arrayOfChildAlliases.length} DEBUG-----------------------`);
   if (arrayOfChildAlliases.length > 0) {
     let newParentAllias = await arrayOfChildAlliases.shift();
-    console.log(`---------------------NEWALLIAS ${newParentAllias} NEWALLIAS-----------------------`);
-    console.log(`---------------------CHILDOBJECT ${Object.entries(parentObj.children[newParentAllias])} CHILDOBJECT-----------------------`);
+    // console.log(`---------------------NEWALLIAS ${newParentAllias} NEWALLIAS-----------------------`);
+    // console.log(`---------------------CHILDOBJECT ${Object.entries(parentObj.children[newParentAllias])} CHILDOBJECT-----------------------`);
     let childAliasInJson = await parentObj.children[newParentAllias];
-    console.log(`---------------------DEBUG ${childAliasInJson.selector} DEBUG-----------------------`);
+    // console.log(`---------------------DEBUG ${childAliasInJson.selector} DEBUG-----------------------`);
     await parentElements.forEach(parentElement => {
+      console.log(`---------------------DEBUG ${parentObj.selector} DEBUG-----------------------`);
       let childrenOfParentElements = parentElement.all(by.css(childAliasInJson.selector));
       console.log(`---------------------DEBUG ${childrenOfParentElements} DEBUG-----------------------`);
-      if (childrenOfParentElements.length !== undefined) {
-        const finalElement = getIncludedPageObjectElement(childAliasInJson, childrenOfParentElements, arrayOfChildAlliases);
+      if (typeof childrenOfParentElements === `object`) {
         if (arrayOfChildAlliases.length === 0) {
-          console.log(`---------------------RESULT ${parentObj.children.newParentAllias} RESULT-----------------------`);
-          return finalElement;
-        };
+          logger.debug(`---------------------RESULT ${childrenOfParentElements} RESULT-----------------------`);
+          return childrenOfParentElements.click();
+        } else {
+          getIncludedPageObjectElement(childAliasInJson, childrenOfParentElements, arrayOfChildAlliases);
+        }
       }
     });
   }
