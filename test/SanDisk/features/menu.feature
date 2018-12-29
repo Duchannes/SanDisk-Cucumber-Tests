@@ -6,4 +6,4 @@ Feature: Menu
     Given I open "https://www.sandisk.com/" url
     Then Text of "Shop Now Reference" should contain "SHOP NOW"
 
-    When  I click "Navigation Bar > Menu > Extreme Reference" 
+    When  I click "CHOOSE MAIN > LI > USB" 

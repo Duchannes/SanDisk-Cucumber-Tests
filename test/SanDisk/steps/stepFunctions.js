@@ -21,7 +21,7 @@ let getJsonObj = async (alias) => {
   return pageElement;
 };
 
-let getIncludedPageObjectElement = async (parentObj, parentElements, arrayOfChildAlliases) => {
+let getIncludedPageObjectElement = async (parentObj, arrayOfChildAlliases, ...parentElements) => {
   // console.log(`---------------------DEBUG ${parentObj} DEBUG-----------------------`);
   // console.log(`---------------------DEBUG ${parentElements.length} DEBUG-----------------------`);
   // console.log(`---------------------DEBUG ${arrayOfChildAlliases.length} DEBUG-----------------------`);
@@ -30,17 +30,20 @@ let getIncludedPageObjectElement = async (parentObj, parentElements, arrayOfChil
     // console.log(`---------------------NEWALLIAS ${newParentAllias} NEWALLIAS-----------------------`);
     // console.log(`---------------------CHILDOBJECT ${Object.entries(parentObj.children[newParentAllias])} CHILDOBJECT-----------------------`);
     let childAliasInJson = await parentObj.children[newParentAllias];
-    // console.log(`---------------------DEBUG ${childAliasInJson.selector} DEBUG-----------------------`);
+    console.log(`---------------------DEBUG ${childAliasInJson.selector} DEBUG-----------------------`);
     await parentElements.forEach(parentElement => {
-      console.log(`---------------------DEBUG ${parentObj.selector} DEBUG-----------------------`);
-      let childrenOfParentElements = parentElement.all(by.css(childAliasInJson.selector));
-      console.log(`---------------------DEBUG ${childrenOfParentElements} DEBUG-----------------------`);
-      if (typeof childrenOfParentElements === `object`) {
+      // console.log(`---------------------DEBUG ${parentElement} DEBUG-----------------------`);
+      let childrenOfParentElement = parentElement.all(by.css(childAliasInJson.selector));
+      // console.log(`---------------------DEBUG ${childrenOfParentElements} DEBUG-----------------------`);
+      if (typeof childrenOfParentElement === `object`) {
         if (arrayOfChildAlliases.length === 0) {
-          logger.debug(`---------------------RESULT ${childrenOfParentElements} RESULT-----------------------`);
-          return childrenOfParentElements.click();
+          // logger.debug(`---------------------RESULT ${childrenOfParentElements} RESULT-----------------------`);
+          return childrenOfParentElement.click();
         } else {
-          getIncludedPageObjectElement(childAliasInJson, childrenOfParentElements, arrayOfChildAlliases);
+          const result = getIncludedPageObjectElement(childAliasInJson, arrayOfChildAlliases, parentElement);
+          if (typeof result === `object`) {
+            return result.click();
+          }
         }
       }
     });

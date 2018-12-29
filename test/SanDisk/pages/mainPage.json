@@ -19,19 +19,18 @@
         "type": "css",
         "selector": ".navbar [href*='extreme']"
     },
-    "Navigation Bar": {
+    "CHOOSE MAIN": {
         "isCollection": true,
         "type": "css",
-        "selector": ".section.parbase",
+        "selector": ".nav.navbar-nav",
         "children": {
-            "Menu": {
-                "isCollection": true,
+            "LI": {
                 "type": "css",
-                "selector": ".nav.navbar-nav",
+                "selector": "li",
                 "children": {
-                    "Extreme Reference": {
+                    "USB": {
                         "type": "css",
-                        "selector": "[href*='extreme']"
+                        "selector": "a[href *='ssd']"
                     }
                 }
             }
