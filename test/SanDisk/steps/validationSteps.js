@@ -28,7 +28,7 @@ When(/^I click "([^"]*)"$/, async (alias) => {
   return (await stepFunctions.getPageObjectElement(alias)).click();
 });
 
-When(/^I switch to "([^"]*)" tab$/, async (number) => {
+When(/^I switch to "([^"]*)" tab$/, async (number) => { //next, previous, any number
   logger.info(`I switch to ${number} tab`);
   const tab = await stepFunctions.getTab(number);
   browser.switchTo().window(tab);
