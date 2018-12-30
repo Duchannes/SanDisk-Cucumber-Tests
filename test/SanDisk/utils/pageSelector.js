@@ -1,7 +1,7 @@
+/* eslint-disable no-undef */
 const path = require(`path`);
 const logger = require(path.resolve(`./test/SanDisk/config/loggerConfig.js`)).logger;
 
-// Enum including all Page Objects and page symptomes
 const PagesEnum = {
   "MAIN": {
     po: require(path.resolve(`./test/SanDisk/pages/mainPage.json`)),
@@ -38,7 +38,6 @@ const PagesEnum = {
 };
 
 async function getPage () {
-  // eslint-disable-next-line no-undef
   const currUrl = await browser.getCurrentUrl();
   for (const key in PagesEnum) { // Check every ENUM page
     for (let i = 0; i < PagesEnum[key].symptomes.length; i++) {

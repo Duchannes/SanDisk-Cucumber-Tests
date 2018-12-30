@@ -18,7 +18,7 @@
     },
     "Extreme Reference":{
         "type": "css",
-        "selector" : ".navbar [href*='extreme']"
+        "selector" : "#country-box",
+        "items": "option"
     }
-    
 }
