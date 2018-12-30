@@ -3,7 +3,6 @@
     "type" : "css",
     "selector" : "a[href = \"/\"]>img"
     },
-    
     "Usb Flash Reference":{
         "type": "css",
         "selector": ".navbar a[href*='usb']"
@@ -18,7 +17,14 @@
     },
     "Extreme Reference":{
         "type": "css",
-        "selector" : "#country-box",
-        "items": "option"
+        "selector" : ".navbar [href*='extreme']"
+    },
+    "To Find A Store Text":{
+        "type":"css",
+        "selector":"h3.no-caps"
+    },
+    "Where To Buy":{
+        "type": "css",
+        "selector": "ul[class*='nav'] a[href*='where']"
     }
 }
