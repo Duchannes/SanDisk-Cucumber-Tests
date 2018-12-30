@@ -10,7 +10,7 @@ async function manage () {
     logger.debug(`waitForAngularEnabled = false`);
   }
   if (currUrl.search(/www\.sandisk\.com/) >= 0) {
-    browser.waitForAngularEnabled(false);
+    browser.waitForAngularEnabled(true);
     logger.debug(`waitForAngularEnabled = true`);
   }
 }

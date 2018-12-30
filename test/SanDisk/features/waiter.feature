@@ -13,3 +13,4 @@ Feature: Menu
     When I wait until "previous" tab appears
       And I switch to "previous" tab
     Then I get tab title
+    When i click "Belarus" in "Area" drop-list
