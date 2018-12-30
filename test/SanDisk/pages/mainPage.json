@@ -19,6 +19,13 @@
     "Extreme Reference":{
         "type": "css",
         "selector" : ".navbar [href*='extreme']"
+    },
+    "To Find A Store Text":{
+        "type":"css",
+        "selector":"h3.no-caps"
+    },
+    "Where To Buy":{
+        "type": "css",
+        "selector": "ul[class*='nav'] a[href*='where']"
     }
-    
 }
