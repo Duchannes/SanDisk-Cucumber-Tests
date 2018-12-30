@@ -20,7 +20,7 @@ When(/^I wait for "([^"]*)" seconds$/, async (seconods) => {
   return browser.sleep(seconods * 1000);
 });
 
-When(/^I wait until "([^"]*)" tab appears$/, async (number) => { //next, previous, any number
+When(/^I wait until "([^"]*)" tab appears$/, async (number) => { // next, previous, any number
   logger.info(`I wait until ${number} tab appears`);
   return browser.wait(stepFunctions.tabCondition(number), 5000);
 });
