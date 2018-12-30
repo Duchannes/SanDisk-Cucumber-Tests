@@ -1,8 +1,10 @@
 /* eslint-disable no-undef */
 const path = require(`path`);
-const pageSelector = require(path.resolve(`./test/SanDisk/utils/pageSelector.js`));
 const EC = protractor.ExpectedConditions;
+
+const pageSelector = require(path.resolve(`./test/SanDisk/utils/pageSelector.js`));
 const logger = require(path.resolve(`./test/SanDisk/config/loggerConfig.js`)).logger;
+const tabWaiter = require(path.resolve(`./test/SanDisk/waiters/tabWaiter.js`));
 
 let getPageObjectElement = async (alias) => {
   let pageElement = (await pageSelector.getPage())[alias];
@@ -44,16 +46,51 @@ let expectedCondition = (shouldBe) => {
 };
 
 let tabCondition = (number) => {
-  return tabWaiter.bind({ "number": number });
+  let expectedConditionFunction;
+  if (isNaN(number)) {
+    switch (number) {
+      case `previous`:
+        expectedConditionFunction = tabWaiter.waitPrevTab.bind();
+        break;
+      case `next`:
+        expectedConditionFunction = tabWaiter.waitNextTab.bind();
+        break;
+      default:
+        logger.error(`Wrong tab position provided: [${number}]`);
+        throw new Error(`Wrong tab position provided.`);
+    }
+  } else {
+    expectedConditionFunction = tabWaiter.waitCertainTab.bind({ "number": number });
+  }
+  return expectedConditionFunction;
 };
 
-async function tabWaiter () {
-  logger.debug(this.number);
-  return (await browser.getAllWindowHandles()).length.toString() === this.number;
+let getTab = async (number) => {
+  let tab;
+  if (isNaN(number)) {
+    const currTab = await browser.getWindowHandle();
+    const allTabs = await browser.getAllWindowHandles();
+    const currTabIndex = allTabs.indexOf(currTab);
+    switch (number) {
+      case `previous`:
+        tab = (await browser.getAllWindowHandles())[currTabIndex - 1];
+        break;
+      case `next`:
+        tab = (await browser.getAllWindowHandles())[currTabIndex + 1];
+        break;
+      default:
+        logger.error(`Wrong tab position provided: [${number}]`);
+        throw new Error(`Wrong tab position provided.`);
+    }
+  } else {
+    tab = (await browser.getAllWindowHandles())[number];
+  }
+  return tab;
 };
 
 module.exports = {
   expectedCondition,
   getPageObjectElement,
-  tabCondition
+  tabCondition,
+  getTab
 };
