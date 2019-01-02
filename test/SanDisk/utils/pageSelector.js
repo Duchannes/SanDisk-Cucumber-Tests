@@ -1,11 +1,11 @@
+/* eslint-disable no-undef */
 const path = require(`path`);
 const logger = require(path.resolve(`./test/SanDisk/config/loggerConfig.js`)).logger;
 
-// Enum including all Page Objects and page symptomes
 const PagesEnum = {
   "MAIN": {
     po: require(path.resolve(`./test/SanDisk/pages/mainPage.json`)),
-    symptomes: [/^https:\/\/www\.sandisk\.com\/$/]
+    symptomes: [/^https:\/\/www\.sandisk\.com\/$/, /home\/extreme-team$/]
   },
   "CHECKOUT": {
     po: require(path.resolve(`./test/SanDisk/pages/checkoutPage.json`)),
@@ -34,12 +34,16 @@ const PagesEnum = {
   "USBFLASHPRODUCT": {
     po: require(path.resolve(`./test/SanDisk/pages/usbFlashProductPage.json`)),
     symptomes: [/\/home\/usb-flash\/(?!$)/]
+  },
+  "WHERETOBY": {
+    po: require(path.resolve(`./test/SanDisk/pages/whereToBuyPage.json`)),
+    symptomes: [/\/about\/where-to-buy$/]
   }
 };
 
 async function getPage () {
-  // eslint-disable-next-line no-undef
   const currUrl = await browser.getCurrentUrl();
+  logger.debug(`currurl - ${currUrl}`);
   for (const key in PagesEnum) { // Check every ENUM page
     for (let i = 0; i < PagesEnum[key].symptomes.length; i++) {
       if (currUrl.search(PagesEnum[key].symptomes[i]) >= 0) {
