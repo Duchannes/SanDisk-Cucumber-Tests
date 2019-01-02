@@ -9,8 +9,10 @@ Feature: Menu
       And I wait until "next" tab appears
       And I switch to "next" tab
     Then I get tab title
+    When I click "Products Menu"
+      And I choose "Mobile Storage" at "Products Menu"
 
-    When I wait until "previous" tab appears
-      And I switch to "previous" tab
-    Then I get tab title
-    When i click "Belarus" in "Area" drop-list
+    # When I wait until "previous" tab appears
+    #   And I switch to "previous" tab
+    # Then I get tab title
+    # When i click "Belarus" in "Area" drop-list

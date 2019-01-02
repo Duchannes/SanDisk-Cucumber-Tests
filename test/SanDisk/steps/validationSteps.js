@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 "use strict";
 let { Then, When, Given } = require(`cucumber`);
+let { element, by } = require(`protractor`);
 const expect = require(`chai`).expect;
 const path = require(`path`);
 const logger = require(path.resolve(`./test/SanDisk/config/loggerConfig.js`)).logger;
@@ -38,4 +39,9 @@ When(/^I switch to "([^"]*)" tab$/, async (number) => { // next, previous, any n
 When(/^I write "([^"]*)" at "([^"]*)"$/, async (text, alias) => {
   logger.info(`I click ${alias}`);
   return (await stepFunctions.getPageObjectElement(alias)).sendKeys(text);
+});
+
+When(/^I choose "([^"]*)" at "([^"]*)"$/, async (text, alias) => {
+  logger.info(`I choose ${text}`);
+  return (await stepFunctions.getElementFromCollecctionByText(alias, text)).click();
 });

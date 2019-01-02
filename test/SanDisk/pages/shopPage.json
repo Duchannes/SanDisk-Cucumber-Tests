@@ -18,11 +18,8 @@
     },
     "Products Menu": {
         "type": "css",
-        "selector": "li.dropdown"
-    },
-    "Type of Products": {
-        "type": "css",
-        "selector": "li[id*='dr_catID']"
+        "selector": "a[role]",
+        "items": "li[id*='dr_catID'] a"
     },
     "Top Sellers Buy Now Button": {
         "isCollection": true,

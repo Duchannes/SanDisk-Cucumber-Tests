@@ -10,11 +10,22 @@ let getPageObjectElement = async (alias) => {
   let pageElement = (await pageSelector.getPage())[alias];
   if (pageElement[`isCollection`]) {
     pageElement = element.all(by.css(pageElement.selector));
+    logger.debug(await pageElement.count());
     return pageElement;
   } else {
     pageElement = element(by.css(pageElement.selector));
     return pageElement;
   }
+};
+
+let getElementFromCollecctionByText = async (alias, text) => {
+  let pageElement = (await pageSelector.getPage())[alias].items;
+  let element = $$(pageElement).filter(item => {
+    return item.getText().then(itemText => {
+      return itemText === text;
+    });
+  });
+  return element.first();
 };
 
 let expectedCondition = (shouldBe) => {
@@ -92,5 +103,6 @@ module.exports = {
   expectedCondition,
   getPageObjectElement,
   tabCondition,
-  getTab
+  getTab,
+  getElementFromCollecctionByText
 };
