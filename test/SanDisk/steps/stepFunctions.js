@@ -21,28 +21,19 @@ let getJsonObj = async (alias) => {
   return pageElement;
 };
 
-let getIncludedPageObjectElement = async (parentObj, arrayOfChildAlliases, ...parentElements) => {
-  // console.log(`---------------------DEBUG ${parentObj} DEBUG-----------------------`);
-  // console.log(`---------------------DEBUG ${parentElements.length} DEBUG-----------------------`);
-  // console.log(`---------------------DEBUG ${arrayOfChildAlliases.length} DEBUG-----------------------`);
-  if (arrayOfChildAlliases.length > 0) {
-    let newParentAllias = await arrayOfChildAlliases.shift();
-    // console.log(`---------------------NEWALLIAS ${newParentAllias} NEWALLIAS-----------------------`);
-    // console.log(`---------------------CHILDOBJECT ${Object.entries(parentObj.children[newParentAllias])} CHILDOBJECT-----------------------`);
+const getIncludedPageObjectElement = async (parentObj, arrayOfAlliases, ...parentElements) => {
+  if (arrayOfAlliases.length > 0) {
+    let newParentAllias = await arrayOfAlliases.shift();
     let childAliasInJson = await parentObj.children[newParentAllias];
-    console.log(`---------------------DEBUG ${childAliasInJson.selector} DEBUG-----------------------`);
     await parentElements.forEach(parentElement => {
-      // console.log(`---------------------DEBUG ${parentElement} DEBUG-----------------------`);
       let childrenOfParentElement = parentElement.all(by.css(childAliasInJson.selector));
-      // console.log(`---------------------DEBUG ${childrenOfParentElements} DEBUG-----------------------`);
       if (typeof childrenOfParentElement === `object`) {
-        if (arrayOfChildAlliases.length === 0) {
-          // logger.debug(`---------------------RESULT ${childrenOfParentElements} RESULT-----------------------`);
+        if (arrayOfAlliases.length === 0) {
           return childrenOfParentElement.click();
         } else {
-          const result = getIncludedPageObjectElement(childAliasInJson, arrayOfChildAlliases, parentElement);
-          if (typeof result === `object`) {
-            return result.click();
+          const result = getIncludedPageObjectElement(childAliasInJson, arrayOfAlliases, parentElement);
+          if (typeof result !== `undefined`) {
+            return result;
           }
         }
       }
