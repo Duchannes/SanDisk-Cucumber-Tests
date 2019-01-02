@@ -6,4 +6,5 @@ Feature: Menu
     Given I open "https://www.sandisk.com/" url
     Then Text of "Shop Now Reference" should contain "SHOP NOW"
 
-    When  I click "CHOOSE MAIN > LI > USB" 
+    When  I click "CHOOSE MAIN > LI > USB"
+    Then Text of "Learn More Button" should contain "Learn More" 

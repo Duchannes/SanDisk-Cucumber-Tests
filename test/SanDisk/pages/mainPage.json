@@ -30,7 +30,7 @@
                 "children": {
                     "USB": {
                         "type": "css",
-                        "selector": "a[href *='ssd']"
+                        "selector": "a[href *='usb']"
                     }
                 }
             }

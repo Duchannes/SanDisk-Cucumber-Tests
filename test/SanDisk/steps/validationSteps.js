@@ -23,7 +23,7 @@ When(/^I click "([^"]*)"$/, async (alias) => {
     const parentAlias = await arrayOfAliases.shift();
     const parentObj = await getJsonObjFromAlliasName(parentAlias);
     const parentElements = await elementHelper(parentAlias);
-    return await multiplyElementHelper(parentObj, arrayOfAliases, ...parentElements);
+    return multiplyElementHelper(parentObj, arrayOfAliases, ...parentElements);
   } else {
     return elementHelper(alias).click();
   }
