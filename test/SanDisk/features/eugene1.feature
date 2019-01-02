@@ -8,8 +8,8 @@ Feature: Where to buy
       And I click "Where To Buy"
       And I click "Select Region"
       And I click "Europe" in "Select Region"
-      And I wait for "5" seconds
+      And I wait for "2" seconds
       And I click "Select Area"
       And I click "Belarus" in "Select Area"
+      And I wait for "2" seconds
     Then Text of "Result Found Title" should contain "result found"
-    
