@@ -40,3 +40,9 @@ When(/^I write "([^"]*)" at "([^"]*)"$/, async (text, alias) => {
   logger.info(`I click ${alias}`);
   return (await stepFunctions.getPageObjectElement(alias)).sendKeys(text);
 });
+
+When(/^I click "([^"]*)" in "([^"]*)"$/, async (text, alias) => {
+  logger.info(`I click [${text}] text in [${alias}]`);
+  const el = await stepFunctions.getElementFromCollectionByText(alias, text);
+  return el.click();
+});
