@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 "use strict";
-let { Then, When, Given } = require(`cucumber`);
+let { When } = require(`cucumber`);
 const path = require(`path`);
 const stepFunctions = require(path.resolve(`./test/SanDisk/steps/stepFunctions.js`));
 const logger = require(path.resolve(`./test/SanDisk/config/loggerConfig.js`)).logger;

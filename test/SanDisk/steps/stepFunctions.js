@@ -87,17 +87,17 @@ let tabCondition = (number) => {
   if (isNaN(number)) {
     switch (number) {
       case `previous`:
-        expectedConditionFunction = tabWaiter.waitPrevTab.bind();
+        expectedConditionFunction = tabWaiter.waitForPrevTab.bind();
         break;
       case `next`:
-        expectedConditionFunction = tabWaiter.waitNextTab.bind();
+        expectedConditionFunction = tabWaiter.waitForNextTab.bind();
         break;
       default:
         logger.error(`Wrong tab position provided: [${number}]`);
         throw new Error(`Wrong tab position provided.`);
     }
   } else {
-    expectedConditionFunction = tabWaiter.waitCertainTab.bind({ "number": number });
+    expectedConditionFunction = tabWaiter.waitForCertainTab.bind({ "number": number });
   }
   return expectedConditionFunction;
 };

@@ -1,9 +1,6 @@
 /* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
-
 "use strict";
 const { After, Status } = require(`cucumber`);
-const fs = require(`fs`);
 const { setDefaultTimeout } = require(`cucumber`);
 setDefaultTimeout(60 * 1000);
 
