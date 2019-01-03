@@ -6,7 +6,7 @@ const logger = require(path.resolve(`./test/SanDisk/config/loggerConfig.js`)).lo
 exports.config = {
   allScriptsTimeout: 20000,
   getPageTimeout: 20000,
-  specs: [path.resolve(`./test/SanDisk/features/eugene/*.feature`)],
+  specs: [path.resolve(`./test/SanDisk/features/*/*.feature`)],
   framework: `custom`,
   frameworkPath: require.resolve(`protractor-cucumber-framework`),
   capabilities: {
