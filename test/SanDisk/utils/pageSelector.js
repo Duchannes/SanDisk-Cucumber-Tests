@@ -40,8 +40,12 @@ const PagesEnum = {
     symptomes: [/\/about\/where-to-buy$/]
   },
   "PRODUCTCOMPATIBILITTOOL": {
-    po: require(path.resolve(`./test/SanDisk/pages/productCompatibilityTool.json`)),
-    symptomes: [/^https:\/\/pct1\.sandisk\.com\/NewSearch.aspx\?$/]
+    po: require(path.resolve(`./test/SanDisk/pages/productCompatibilityToolPage.json`)),
+    symptomes: [/^https:\/\/pct1\.sandisk\.com\/NewSearch.aspx\?/, /\/pct1\.sandisk\.com\/DeviceList.aspx\?/]
+  },
+  "SEARCHRESULTS": {
+    po: require(path.resolve(`./test/SanDisk/pages/searchResultsPage.json`)),
+    symptomes: [/\/store\/sdiskus\/search\?keywords=/]
   }
 };
 
