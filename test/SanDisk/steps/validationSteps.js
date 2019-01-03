@@ -6,6 +6,7 @@ const path = require(`path`);
 const elementHelper = require(path.resolve(`./test/SanDisk/steps/stepFunctions.js`)).getPageObjectElement;
 const elementFinder = require(path.resolve(`./test/SanDisk/steps/stepFunctions.js`)).nestedElement;
 const logger = require(path.resolve(`./test/SanDisk/config/loggerConfig.js`)).logger;
+const pageSelector = require(path.resolve(`./test/SanDisk/utils/pageSelector.js`));
 
 Then(/^Text of "([^"]*)" should( not)? contain "([^"]*)"$/, async (alias, notArg, textToContain) => {
   notArg = notArg ? ` not` : ``;
@@ -20,6 +21,9 @@ When(/^I click "([^"]*)"$/, async (alias) => {
   if (alias.includes(`>`)) {
     let arrayOfAliases = alias.split(` > `);
     let parentAlias = arrayOfAliases.shift();
-    return (await elementFinder(parentAlias, arrayOfAliases));
+    let parentJSON = (await pageSelector.getPage())[parentAlias];
+    let elemToClick = await elementFinder(parentJSON, arrayOfAliases);
+    console.log(elemToClick);
+    return elemToClick.click();
   }
 });

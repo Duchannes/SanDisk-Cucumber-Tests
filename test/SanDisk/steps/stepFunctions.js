@@ -14,25 +14,20 @@ let getPageObjectElement = async (alias) => {
   }
 };
 
-let nestedElement = async (parentAlias, childrenAliases, chain) => {
-  let parent = (await pageSelector.getPage())[parentAlias];
-  logger.debug(childrenAliases);
-  childrenAliases.forEach(element => {
-    if (parent.children) {
-      let names = [];
-      parent = parent.children[element];
-      names.push(parent.selector);
-      logger.debug(parent.selector);
-      childrenAliases.shift();
-      names.push(parent.selector);
-      logger.debug(names);
-      return nestedElement(parent, childrenAliases, names.join(` > `));
-    }
-  });
+let nestedElement = async (parentJSON, childrenAliases) => {
+  let parent = element.all(by.css(parentJSON.selector));
+  logger.debug(JSON.stringify(parentJSON.selector));
+  let childName = childrenAliases.shift();
+  let childJSON = parentJSON.children[childName];
+  logger.debug(JSON.stringify(childJSON.selector));
+  let child = await parent.all(by.css(childJSON.selector));
+  parentJSON = childJSON;
+  logger.debug(JSON.stringify(parentJSON));
   if (childrenAliases.length === 0) {
-    logger.debug(names);
-    let elem = element.all(by.css(chain));
-    return elem.click();
+    console.log(Array.isArray(child));
+    return child;
+  } else {
+    nestedElement(parentJSON, childrenAliases);
   }
 };
 module.exports = {

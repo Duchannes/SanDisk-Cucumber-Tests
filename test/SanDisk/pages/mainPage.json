@@ -20,11 +20,11 @@
         "selector": "[href*='extreme']"
     },
     "CHOOSE MAIN": {
-        "isCollection" : true,
         "type": "css",
         "selector": ".nav.navbar-nav",
         "children": {
             "LI": {
+                "isCollection" : true,
                 "type": "css",
                 "selector": "li",
                 "children":{
