@@ -7,7 +7,7 @@ const stepFunctions = require(path.resolve(`./test/SanDisk/steps/stepFunctions.j
 const logger = require(path.resolve(`./test/SanDisk/config/loggerConfig.js`)).logger;
 const CLICKABLE_TIMEOUT = 20 * 1000;
 
-When(/^I wait until "([^"]*)" is (.*)$/, async (alias, shouldBe) => {
+When(/^I wait until "([^"]*)" is (visible|clickable|invisible|gone|present)$/, async (alias, shouldBe) => {
   let element = await stepFunctions.getPageObjectElement(alias);
   logger.debug(element);
   let expectedConditionFunction = stepFunctions.expectedCondition(shouldBe);

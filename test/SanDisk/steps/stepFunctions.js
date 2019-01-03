@@ -29,16 +29,28 @@ let getElement = async (pageElement) => {
 };
 
 let getNestedElement = async (parentPO, currElement, nestedPO) => {
-  if (nestedPO.length > 0) {
-    let currPageElement = parentPO.children[nestedPO.shift()];
-    if (currPageElement[`isCollection`]) {
-      pageElement = currElement.$$(currPageElement.selector);
-    } else {
-      pageElement = currElement.$$(currPageElement.selector);
-    }
-    return getNestedElement(currPageElement, pageElement, nestedPO);
-  } else {
+  if (nestedPO.length === 0) {
     return currElement;
+  } else {
+    let result = [];
+    let currPageElement = parentPO.children[nestedPO.shift()];
+    if (!Array.isArray(currElement)) {
+      if (currPageElement[`isCollection`]) {
+        result = await currElement.$$(currPageElement.selector);
+      } else {
+        result = await currElement.$(currPageElement.selector);
+      }
+      return getNestedElement(currPageElement, result, nestedPO);
+    } else {
+      for (let i = 0; i < currElement.length; i++) {
+        if (currPageElement[`isCollection`]) {
+          result.concat(await currElement[i].$$(currPageElement.selector));
+        } else {
+          result.push(await currElement[i].$(currPageElement.selector));
+        }
+      };
+      return getNestedElement(currPageElement, result, nestedPO);
+    }
   }
 };
 

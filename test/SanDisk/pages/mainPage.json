@@ -35,7 +35,7 @@
                 "type": "css",
                 "selector": ".navbar-nav",
                 "children" : {
-                    "Link":{
+                    "Menu Option":{
                         "isCollection": true,
                         "type": "css",
                         "selector": "li",
@@ -45,6 +45,22 @@
                                 "selector": "a"
                             }
                         }
+                    }
+                }
+            }
+        }
+    },
+    "Body1":{
+        "type": "css",
+        "selector": "body",
+        "children" : {
+            "Title Menu":{
+                "type": "css",
+                "selector": ".navbar-nav",
+                "children" : {
+                    "Link":{
+                        "type": "css",
+                        "selector": "a[href*='ssd']"                        
                     }
                 }
             }

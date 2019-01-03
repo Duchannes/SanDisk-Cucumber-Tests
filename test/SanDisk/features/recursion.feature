@@ -1,8 +1,8 @@
 @all
-Feature: Recursion
+Feature: Where to buy
 
-  @san1disk
-  Scenario: Verify user can open menu
+  @sandisk
+  Scenario: Choose where to buy
     Given I open "https://www.sandisk.com/" url
-    Then Text of "Shop Now Reference > ASD > asd > asdas" should contain "SHOP NOW"
-    When  I click "Shop Now Reference" 
+    Then I get text in "Body1 > Title Menu > Link"
+    Then I get text in "Body > Title Menu > Menu Option > Link"

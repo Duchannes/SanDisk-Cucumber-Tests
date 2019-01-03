@@ -30,8 +30,15 @@ When(/^I click "([^"]*)"$/, async (alias) => {
 
 When(/^I get text in "([^"]*)"$/, async (alias) => {
   logger.info(`I click ${alias}`);
-  const elements = stepFunctions.getPageObjectElement(alias);
-  await element.getText();
+  const elements = await stepFunctions.getPageObjectElement(alias);
+  if (Array.isArray(elements)) {
+    logger.debug(elements.length);
+    for (let i = 0; i < elements.length; i++) {
+      logger.debug(await elements[i].getText());
+    };
+  } else {
+    logger.debug(await elements.getText());
+  }
   return true;
 });
 
