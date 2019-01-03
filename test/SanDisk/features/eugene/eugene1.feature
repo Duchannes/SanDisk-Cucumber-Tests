@@ -1,7 +1,7 @@
 @all
 Feature: Where to buy
 
-  @sandisk1
+  @eugene
   Scenario: Choose where to buy
     Given I open "https://www.sandisk.com/" url
     When  I click "Extreme Reference"
