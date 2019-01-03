@@ -1,7 +1,7 @@
 @all
 Feature: SHOP
 
-  @sandisk4
+  @eugene
   Scenario: Products sorting
     Given I open "https://www.sandisk.com/" url
     When  I click "Shop Now Reference"

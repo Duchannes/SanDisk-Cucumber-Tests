@@ -1,7 +1,7 @@
 @all
 Feature: Find the right feet
 
-  @sandisk3
+  @eugene
   Scenario: Find the right feet
     Given I open "https://www.sandisk.com/" url
     When  I click "Find The Right Fit"
