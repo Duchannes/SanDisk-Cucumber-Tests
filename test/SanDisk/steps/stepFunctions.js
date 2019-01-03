@@ -4,10 +4,7 @@ const EC = protractor.ExpectedConditions;
 
 const pageSelector = require(path.resolve(`./test/SanDisk/utils/pageSelector.js`));
 const logger = require(path.resolve(`./test/SanDisk/config/loggerConfig.js`)).logger;
-<<<<<<< HEAD
-=======
 const tabWaiter = require(path.resolve(`./test/SanDisk/waiters/tabWaiter.js`));
->>>>>>> be9f501848fb7bd3ebfd398ad35627eaf7499004
 
 let getPageObjectElement = async (alias) => {
   let pageElement = (await pageSelector.getPage())[alias];
@@ -20,32 +17,6 @@ let getPageObjectElement = async (alias) => {
   }
 };
 
-<<<<<<< HEAD
-let nestedElement = async (parentAlias, childrenAliases, chain) => {
-  let parent = (await pageSelector.getPage())[parentAlias];
-  logger.debug(childrenAliases);
-  childrenAliases.forEach(element => {
-    if (parent.children) {
-      let names = [];
-      parent = parent.children[element];
-      names.push(parent.selector);
-      logger.debug(parent.selector);
-      childrenAliases.shift();
-      names.push(parent.selector);
-      logger.debug(names);
-      return nestedElement(parent, childrenAliases, names.join(` > `));
-    }
-  });
-  if (childrenAliases.length === 0) {
-    logger.debug(names);
-    let elem = element.all(by.css(chain));
-    return elem.click();
-  }
-};
-module.exports = {
-  getPageObjectElement,
-  nestedElement
-=======
 let expectedCondition = (shouldBe) => {
   let expectedConditionFunction;
   switch (shouldBe) {
@@ -127,8 +98,8 @@ let getElementFromCollectionByText = async (alias, text) => {
       return items[i];
     }
   }
-  throw new Error(`No element with text [${text}] in [${alias}]!`)
-}
+  throw new Error(`No element with text [${text}] in [${alias}]!`);
+};
 
 module.exports = {
   expectedCondition,
@@ -136,5 +107,5 @@ module.exports = {
   tabCondition,
   getTab,
   getElementFromCollectionByText
->>>>>>> be9f501848fb7bd3ebfd398ad35627eaf7499004
+
 };

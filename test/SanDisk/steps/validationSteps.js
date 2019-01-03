@@ -4,10 +4,6 @@
 let { Then, When, Given } = require(`cucumber`);
 const expect = require(`chai`).expect;
 const path = require(`path`);
-
-const elementHelper = require(path.resolve(`./test/SanDisk/steps/stepFunctions.js`)).getPageObjectElement;
-const elementFinder = require(path.resolve(`./test/SanDisk/steps/stepFunctions.js`)).nestedElement;
-
 const logger = require(path.resolve(`./test/SanDisk/config/loggerConfig.js`)).logger;
 const stepFunctions = require(path.resolve(`./test/SanDisk/steps/stepFunctions.js`));
 const angularManager = require(path.resolve(`./test/SanDisk/utils/angularManager.js`));
@@ -39,7 +35,7 @@ When(/^I switch to "([^"]*)" tab$/, async (number) => { // next, previous, any n
   return browser.refresh(1000);
 });
 
-When(/^I write "([^"]*)" at "([^"]*)"$/, async (text, alias) => {
+When(/^I type "([^"]*)" at "([^"]*)"$/, async (text, alias) => {
   logger.info(`I click ${alias}`);
   return (await stepFunctions.getPageObjectElement(alias)).sendKeys(text);
 });

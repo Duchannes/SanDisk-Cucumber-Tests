@@ -3,11 +3,7 @@
         "type": "css",
         "selector": "a[href = \"/\"]>img"
     },
-<<<<<<< HEAD
     "Usb Flash Reference": {
-=======
-    "Usb Flash Reference":{
->>>>>>> be9f501848fb7bd3ebfd398ad35627eaf7499004
         "type": "css",
         "selector": ".navbar a[href*='usb']"
     },
@@ -23,33 +19,12 @@
         "type": "css",
         "selector": "[href*='extreme']"
     },
-    "CHOOSE MAIN": {
-        "isCollection" : true,
+    "To Find A Store Text": {
         "type": "css",
-<<<<<<< HEAD
-        "selector": ".nav.navbar-nav",
-        "children": {
-            "LI": {
-                "type": "css",
-                "selector": "li",
-                "children":{
-                    "USB":{
-                        "type": "css",
-                        "selector": "a[href *='ssd']"
-                    }
-                }
-            }
-        }
-=======
-        "selector" : ".navbar [href*='extreme']"
+        "selector": "h3.no-caps"
     },
-    "To Find A Store Text":{
-        "type":"css",
-        "selector":"h3.no-caps"
-    },
-    "Where To Buy":{
+    "Where To Buy": {
         "type": "css",
         "selector": "ul[class*='nav'] a[href*='where']"
->>>>>>> be9f501848fb7bd3ebfd398ad35627eaf7499004
     }
 }
