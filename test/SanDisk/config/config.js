@@ -1,12 +1,12 @@
 /* eslint-disable no-undef */
 const path = require(`path`);
-const yargs = require(`yargs`);
+const yargs = require(`yargs`).argv;
 const logger = require(path.resolve(`./test/SanDisk/config/loggerConfig.js`)).logger;
 
 exports.config = {
   allScriptsTimeout: 20000,
   getPageTimeout: 20000,
-  specs: [path.resolve(`./test/SanDisk/features/eugene/*.feature`)],
+  specs: [path.resolve(`./test/SanDisk/features/*/*.feature`)],
   framework: `custom`,
   frameworkPath: require.resolve(`protractor-cucumber-framework`),
   capabilities: {
