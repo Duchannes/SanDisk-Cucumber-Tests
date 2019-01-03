@@ -127,8 +127,8 @@ let getElementFromCollectionByText = async (alias, text) => {
       return items[i];
     }
   }
-  throw new Error(`No element with text [${text}] in [${alias}]!`)
-}
+  throw new Error(`No element with text [${text}] in [${alias}]!`);
+};
 
 module.exports = {
   expectedCondition,

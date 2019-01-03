@@ -13,11 +13,11 @@ const PagesEnum = {
   },
   "PRODUCTS": {
     po: require(path.resolve(`./test/SanDisk/pages/productsPage.json`)),
-    symptomes: [/\/store\/sdiskus\/en_US\/list\/categoryID/]
+    symptomes: [/\/store\/sdiskus\/en_US\/list\/categoryID/, /\/store\/sdiskus\/en_US\/ContinueShopping\//]
   },
   "PRODUCT": {
     po: require(path.resolve(`./test/SanDisk/pages/productPage.json`)),
-    symptomes: [/\/store\/sdiskus\/en_US\/pd\/productID/]
+    symptomes: [/\/store\/sdiskus\/en_US\/pd\/productID/, /shop\.sandisk\.com\/store\?Action=pd&Locale=en_US/]
   },
   "SHOP": {
     po: require(path.resolve(`./test/SanDisk/pages/shopPage.json`)),
@@ -38,6 +38,10 @@ const PagesEnum = {
   "WHERETOBY": {
     po: require(path.resolve(`./test/SanDisk/pages/whereToBuyPage.json`)),
     symptomes: [/\/about\/where-to-buy$/]
+  },
+  "PRODUCTCOMPATIBILITTOOL": {
+    po: require(path.resolve(`./test/SanDisk/pages/productCompatibilityTool.json`)),
+    symptomes: [/^https:\/\/pct1\.sandisk\.com\/NewSearch.aspx\?$/]
   }
 };
 

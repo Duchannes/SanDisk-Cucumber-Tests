@@ -49,3 +49,35 @@ When(/^I click "([^"]*)" in "([^"]*)"$/, async (text, alias) => {
   const el = await stepFunctions.getElementFromCollectionByText(alias, text);
   return el.click();
 });
+
+Then(/^Page title should( not)? be "([^"]*)"$/, async (notArg, text) => {
+  notArg = notArg ? ` not` : ``;
+  let pageTitle = await browser.getTitle();
+  logger.info(`Page title should${notArg} be ${text}`);
+  if (notArg) {
+    return expect(pageTitle).to.not.equal(text);
+  } else {
+    return expect(pageTitle).to.be.equal(text);
+  }
+});
+
+Then(/^Count of "([^"]*)" should( not)? be "([^"]*)"$/, async (alias, notArg, expectedNumber) => {
+  notArg = notArg ? ` not` : ``;
+  let element = stepFunctions.getPageObjectElement(alias);
+  let result = await element.count();
+  expectedNumber = parseInt(expectedNumber);
+  logger.info(`Count of ${alias} should${notArg} be ${expectedNumber}`);
+  if (notArg) {
+    return expect(result).to.not.equal(expectedNumber);
+  } else {
+    return expect(result).to.equal(expectedNumber);
+  }
+});
+
+Then(/^"([^"]*)" should( not)? be visible$/, async (alias, notArg) => {
+  notArg = notArg ? ` not` : ``;
+  logger.info(`${alias} should${notArg} be visible`);
+  let element = await stepFunctions.getPageObjectElement(alias);
+  let result = await element.isPresent();
+  return expect(result).to.be.equal(!notArg);
+});
