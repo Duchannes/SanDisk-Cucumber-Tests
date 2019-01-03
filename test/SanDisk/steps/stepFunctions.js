@@ -88,9 +88,23 @@ let getTab = async (number) => {
   return tab;
 };
 
+let getElementFromCollectionByText = async (alias, text) => {
+  const itemsLocator = (await pageSelector.getPage())[alias].items;
+  const element = await getPageObjectElement(alias);
+  const items = await element.$$(itemsLocator);
+  for (let i = 0; i < items.length; i++) {
+    const itemText = await items[i].getText();
+    if (text === itemText) {
+      return items[i];
+    }
+  }
+  throw new Error(`No element with text [${text}] in [${alias}]!`)
+}
+
 module.exports = {
   expectedCondition,
   getPageObjectElement,
   tabCondition,
-  getTab
+  getTab,
+  getElementFromCollectionByText
 };
