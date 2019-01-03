@@ -26,5 +26,14 @@
     "Where To Buy":{
         "type": "css",
         "selector": "ul[class*='nav'] a[href*='where']"
+    },
+    "Find The Right Fit":{
+        "type": "css",
+        "selector": "span.btn"
+    },
+    "Buy It Now":{
+        "type": "css",
+        "selector": ".btn.actionItem.bg-red"
     }
+    
 }

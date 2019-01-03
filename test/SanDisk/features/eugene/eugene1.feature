@@ -11,5 +11,5 @@ Feature: Where to buy
       And I wait for "2" seconds
       And I click "Select Area"
       And I click "Belarus" in "Select Area"
-      And I wait for "2" seconds
+      And I wait for "4" seconds
     Then Text of "Result Found Title" should contain "result found"
