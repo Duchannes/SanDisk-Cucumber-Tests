@@ -1,7 +1,8 @@
 {
     "Sort By Menu": {
         "type": "id",
-        "selector": "dr_ordering"
+        "selector": "#dr_ordering",
+        "items":"option[value]"
     },
     "Sort By": {
         "isCollection": true,
