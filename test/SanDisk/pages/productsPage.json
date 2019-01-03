@@ -22,10 +22,10 @@
         "type": "css",
         "selector": "#dr_ordering"
     },
-    "Capacity Button Selector": {
-        "isCollection": true,
+    "Capacity List": {
         "type": "css",
-        "selector": ".dr_facetValue [href$=true]"
+        "selector": "#dr_narrowResults",
+        "items":"li.dr_facetValue a"
     },
     "Icon Basket": {
         "type":"css",

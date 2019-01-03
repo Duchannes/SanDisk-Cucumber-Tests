@@ -44,6 +44,7 @@ When(/^I write "([^"]*)" at "([^"]*)"$/, async (text, alias) => {
 When(/^I click "([^"]*)" in "([^"]*)"$/, async (text, alias) => {
   logger.info(`I click [${text}] text in [${alias}]`);
   const el = await stepFunctions.getElementFromCollectionByText(alias, text);
+  console.log(await el);
   return el.click();
 });
 
@@ -60,8 +61,8 @@ Then(/^Page title should( not)? be "([^"]*)"$/, async (notArg, text) => {
 
 Then(/^Count of "([^"]*)" should( not)? be "([^"]*)"$/, async (alias, notArg, expectedNumber) => {
   notArg = notArg ? ` not` : ``;
-  let element = stepFunctions.getPageObjectElement(alias);
-  let result = await element.count();
+  let element = await stepFunctions.getPageObjectElement(alias);
+  let result = await element.length;
   expectedNumber = parseInt(expectedNumber);
   logger.info(`Count of ${alias} should${notArg} be ${expectedNumber}`);
   if (notArg) {

@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 const path = require(`path`);
 const EC = protractor.ExpectedConditions;
-
 const pageSelector = require(path.resolve(`./test/SanDisk/utils/pageSelector.js`));
 const logger = require(path.resolve(`./test/SanDisk/config/loggerConfig.js`)).logger;
 const tabWaiter = require(path.resolve(`./test/SanDisk/waiters/tabWaiter.js`));
@@ -93,8 +92,9 @@ let getElementFromCollectionByText = async (alias, text) => {
   const element = await getPageObjectElement(alias);
   const items = await element.$$(itemsLocator);
   for (let i = 0; i < items.length; i++) {
-    const itemText = await items[i].getText();
-    if (text === itemText) {
+    const itemText = await (items[i]).getText();
+    console.log(itemText + `!!`);
+    if (itemText.includes(text)) {
       return items[i];
     }
   }

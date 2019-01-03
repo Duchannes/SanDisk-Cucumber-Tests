@@ -11,18 +11,15 @@
         "type": "id",
         "selector": "dr_searchbutton"
     },
-    "List of products by searching": {
+    "List of products": {
         "isCollection": true,
         "type": "css",
         "selector": "a.dr_productName"
     },
     "Products Menu": {
         "type": "css",
-        "selector": "li.dropdown"
-    },
-    "Type of Products": {
-        "type": "css",
-        "selector": "li[id*='dr_catID']"
+        "selector": "li.dropdown",
+        "items": "li[id*='dr_catID']"
     },
     "Top Sellers Buy Now Button": {
         "isCollection": true,
