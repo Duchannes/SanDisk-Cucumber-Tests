@@ -26,5 +26,17 @@
         "isCollection": true,
         "type": "css",
         "selector": ".dr_facetValue [href$=true]"
+    },
+    "Icon Basket": {
+        "type":"css",
+        "selector": "i.dr_icon.icon-basket"
+    },
+    "Basket": {
+        "type":"css",
+        "selector": ".dr_icon.icon-basket"
+    },
+    "Checkout Button": {
+        "type":"css",
+        "selector": "a.btn_checkOut"
     }
 }

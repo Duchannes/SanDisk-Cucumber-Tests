@@ -1,0 +1,21 @@
+{
+    "Select Manufacturer":{
+        "type":"css",
+        "selector":"#manufacturers5",
+        "items":"#manufacturers5 > option[value*='1']"
+    },
+    "Select Device Type":{
+        "type":"css",
+        "selector":"#types5",
+        "items":"#types5 > option[value]"
+    },
+    "GO Button":{
+        "type":"css",
+        "selector":"#btn5"
+    },
+    "List of products":{
+        "type":"css",
+        "selector":"#btn5",
+        "items":"#types5 > option[value]"
+    }
+}

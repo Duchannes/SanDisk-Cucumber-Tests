@@ -6,5 +6,25 @@
     "Select Capacity": {
         "type": "css",
         "selector": "form select"
+    },
+    "Product Information": {
+        "type": "css",
+        "selector": "#dr_productSummary"
+    },
+    "Select Size": {
+        "type":"css",
+        "selector": "select[name='productID']"
+    },
+    "Select Option": {
+        "type":"css",
+        "selector": "option[value='5213214400']"
+    },
+    "Stock Message": {
+        "type":"css",
+        "selector": "#dr_inStockMessage"
+    },
+    "Icon Basket": {
+        "type":"css",
+        "selector": "i.dr_icon.icon-basket"
     }
 }
