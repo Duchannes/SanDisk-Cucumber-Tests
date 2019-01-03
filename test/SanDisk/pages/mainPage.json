@@ -3,11 +3,7 @@
         "type": "css",
         "selector": "a[href = \"/\"]>img"
     },
-<<<<<<< HEAD
     "Usb Flash Reference": {
-=======
-    "Usb Flash Reference":{
->>>>>>> be9f501848fb7bd3ebfd398ad35627eaf7499004
         "type": "css",
         "selector": ".navbar a[href*='usb']"
     },
@@ -26,7 +22,6 @@
     "CHOOSE MAIN": {
         "isCollection" : true,
         "type": "css",
-<<<<<<< HEAD
         "selector": ".nav.navbar-nav",
         "children": {
             "LI": {
@@ -40,16 +35,5 @@
                 }
             }
         }
-=======
-        "selector" : ".navbar [href*='extreme']"
-    },
-    "To Find A Store Text":{
-        "type":"css",
-        "selector":"h3.no-caps"
-    },
-    "Where To Buy":{
-        "type": "css",
-        "selector": "ul[class*='nav'] a[href*='where']"
->>>>>>> be9f501848fb7bd3ebfd398ad35627eaf7499004
     }
 }
