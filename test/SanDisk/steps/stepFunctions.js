@@ -8,12 +8,37 @@ const tabWaiter = require(path.resolve(`./test/SanDisk/waiters/tabWaiter.js`));
 
 let getPageObjectElement = async (alias) => {
   let pageElement = (await pageSelector.getPage())[alias];
+  if (alias.includes(`>`)) {
+    const elements = alias.split(` > `);
+    const firstPO = (await pageSelector.getPage())[elements.shift()];
+    const firstElement = await getElement(firstPO);
+    return getNestedElement(firstPO, firstElement, elements);
+  } else {
+    return getElement(pageElement);
+  }
+};
+
+let getElement = async (pageElement) => {
   if (pageElement[`isCollection`]) {
     pageElement = element.all(by.css(pageElement.selector));
     return pageElement;
   } else {
     pageElement = element(by.css(pageElement.selector));
     return pageElement;
+  }
+};
+
+let getNestedElement = async (parentPO, currElement, nestedPO) => {
+  if (nestedPO.length > 0) {
+    let currPageElement = parentPO.children[nestedPO.shift()];
+    if (currPageElement[`isCollection`]) {
+      pageElement = currElement.$$(currPageElement.selector);
+    } else {
+      pageElement = currElement.$$(currPageElement.selector);
+    }
+    return getNestedElement(currPageElement, pageElement, nestedPO);
+  } else {
+    return currElement;
   }
 };
 
@@ -98,8 +123,8 @@ let getElementFromCollectionByText = async (alias, text) => {
       return items[i];
     }
   }
-  throw new Error(`No element with text [${text}] in [${alias}]!`)
-}
+  throw new Error(`No element with text [${text}] in [${alias}]!`);
+};
 
 module.exports = {
   expectedCondition,

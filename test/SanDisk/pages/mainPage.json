@@ -1,7 +1,7 @@
 {
     "SanDisk Image":{
-    "type" : "css",
-    "selector" : "a[href = \"/\"]>img"
+        "type" : "css",
+        "selector" : "a[href = \"/\"]>img"
     },
     "Usb Flash Reference":{
         "type": "css",
@@ -26,5 +26,28 @@
     "Where To Buy":{
         "type": "css",
         "selector": "ul[class*='nav'] a[href*='where']"
+    },
+    "Body":{
+        "type": "css",
+        "selector": "body",
+        "children" : {
+            "Title Menu":{
+                "type": "css",
+                "selector": ".navbar-nav",
+                "children" : {
+                    "Link":{
+                        "isCollection": true,
+                        "type": "css",
+                        "selector": "li",
+                        "children" : {
+                            "Link":{
+                                "type": "css",
+                                "selector": "a"
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

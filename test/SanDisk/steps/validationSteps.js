@@ -28,6 +28,13 @@ When(/^I click "([^"]*)"$/, async (alias) => {
   return (await stepFunctions.getPageObjectElement(alias)).click();
 });
 
+When(/^I get text in "([^"]*)"$/, async (alias) => {
+  logger.info(`I click ${alias}`);
+  const elements = stepFunctions.getPageObjectElement(alias);
+  await element.getText();
+  return true;
+});
+
 When(/^I switch to "([^"]*)" tab$/, async (number) => { // next, previous, any number
   logger.info(`I switch to ${number} tab`);
   const tab = await stepFunctions.getTab(number);
