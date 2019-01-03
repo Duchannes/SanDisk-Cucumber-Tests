@@ -12,5 +12,13 @@
         "isCollection": true,
         "type": "css",
         "selector": "td[class$=Name] > a"
+    },
+    "Continue Shopping": {
+        "type": "css",
+        "selector": "#dr_continueShoppingButton > a[class]"
+    },
+    "Empty Cart": {
+        "type": "css",
+        "selector": "div.dr_emptyCart > h2"
     }
 }

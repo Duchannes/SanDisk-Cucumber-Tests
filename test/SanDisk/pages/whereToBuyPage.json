@@ -3,19 +3,16 @@
         "type": "css",
         "selector": "h3[class*='no']"
     },
-    
     "Select Region":{
         "type":"css",
         "selector":"#region",
         "items":"option[value*='object']"
     },
-
     "Select Area":{
         "type":"css",
         "selector":"#country-box",
         "items":"option[value*='object']"
     },
-
     "Result Found Title":{
         "type":"css",
         "selector":"h3.ng-binding"
