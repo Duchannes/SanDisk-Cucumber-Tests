@@ -9,7 +9,6 @@ exports.config = {
   specs: [path.resolve(`./test/SanDisk/features/*.feature`)],
   framework: `custom`,
   frameworkPath: require.resolve(`protractor-cucumber-framework`),
-  ignoreUncaughtExceptions: true,
   capabilities: {
     browserName: yargs.browser || `chrome`,
     shardTestFiles: yargs.instances > 1,

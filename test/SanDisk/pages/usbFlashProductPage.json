@@ -1,9 +1,4 @@
 {
-    "Where To Buy ":{
-        "type": "css",
-        "selector": "a[href = '#where-to-buy']"
-    },
-
     "Select Region":{
         "type":"id",
         "selector":"region"
