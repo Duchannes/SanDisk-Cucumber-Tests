@@ -1,0 +1,32 @@
+{
+    "High Perfomance Radio Button": {
+        "type": "css",
+        "selector": "label [value$=h-performance]"
+    },
+    "Portable SSD Radio Button": {
+        "type": "css",
+        "selector": "label [value$=portable]"
+    },
+    "On The Go Radio Button": {
+        "type": "css",
+        "selector": "label [value$=the-go]"
+    },
+    "Upgrade Kits Radio Button": {
+        "type": "css",
+        "selector": "label [value$=upgrade-tools]"
+    },
+    "Learn More Button": {
+        "type": "css",
+        "selector": "div.search-result a[href $='html']"
+    },
+    "Product Title Big": {
+        "isCollection": true,
+        "type": "css",
+        "selector": "[ng-bind-html='product.title']"
+    },
+    "Radio Button Side Bar": {
+        "type": "css",
+        "selector": ".filter-panel.ng-scope",
+        "items":"label"
+    }
+}

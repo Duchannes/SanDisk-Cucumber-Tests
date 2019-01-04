@@ -46,6 +46,18 @@
         "type": "css",
         "selector": "#dr_selectedFacets"
     },
+    "Basket Icon": {
+        "type": "css",
+        "selector": "i[class$='basket']"
+    },
+    "Number Of Products Icon": {
+        "type": "css",
+        "selector": "#dr_cartQty"
+    },
+    "Mini Cart Text": {
+        "type": "css",
+        "selector": "#dr_miniCartDisplay span"
+    },
     "List Of Usb Products": {
         "isCollection": true,
         "type": "css",

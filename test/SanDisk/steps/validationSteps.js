@@ -14,7 +14,6 @@ Then(/^Text of "([^"]*)" should( not)? contain "([^"]*)"$/, async (alias, notArg
   return expect(elementText.toLowerCase()).to.include(textToContain.toLowerCase());
 });
 
-//
 Then(/^Text of each "([^"]*)" should( not)? contain "([^"]*)"$/, async (alias, notArg, textToContain) => {
   notArg = notArg ? ` not` : ``;
   let elements = await stepFunctions.getPageObjectElement(alias);

@@ -3,6 +3,10 @@
         "type": "css",
         "selector": "label [value*=wireless]"
     },
+    "Learn More Button": {
+        "type": "css",
+        "selector": "div.search-result a[href $='html']"
+    },
     "List Of Usb Flash": {
         "isCollection": true,
         "selector": ".results-display.ng-scope",
