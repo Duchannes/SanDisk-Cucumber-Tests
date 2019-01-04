@@ -17,7 +17,7 @@ const PagesEnum = {
   },
   "PRODUCT": {
     po: require(path.resolve(`./test/SanDisk/pages/productPage.json`)),
-    symptomes: [/\/store\/sdiskus\/pd\/productID/, /shop\.sandisk\.com\/store\?Action=pd&Locale=en_US/]
+    symptomes: [/\/store\/sdiskus\/en_US\/pd\/productID/, /\/\/shop\.sandisk\.com\/store\/sdiskus\/pd\/productID/]
   },
   "SHOP": {
     po: require(path.resolve(`./test/SanDisk/pages/shopPage.json`)),
