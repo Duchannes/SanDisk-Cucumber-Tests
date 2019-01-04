@@ -39,5 +39,9 @@
         "isCollection": true,
         "type": "css",
         "selector": ".dr_prod-name"
+    },
+    "Capacity List":{
+        "selector":"div.dr_facetName",
+        "items":"li.dr_facetValue"
     }
 }

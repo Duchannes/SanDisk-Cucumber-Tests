@@ -47,6 +47,12 @@
     "Selected Filters Title": {
         "type":"css",
         "selector": "#dr_selectedFacets"
+    },
+    "List Of Usb Products": {
+        "isCollection": true,
+        "type": "css",
+        "selector": "a.dr_productName"
     }
+
 
 }
