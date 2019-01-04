@@ -2,13 +2,13 @@
     "Sort By Menu": {
         "type": "css",
         "selector": "#dr_ordering",
-        "items":"option[value]"
+        "items": "option[value]"
     },
     "Sort By": {
         "type": "css",
         "selector": "label.dr_catSortOptions"
     },
-    "Category Title":  {
+    "Category Title": {
         "type": "css",
         "selector": ".dr_categoryName"
     },
@@ -24,33 +24,41 @@
     "Capacity List": {
         "type": "css",
         "selector": "#dr_narrowResults",
-        "items":"li.dr_facetValue a"
+        "items": "li.dr_facetValue a"
     },
     "Icon Basket": {
-        "type":"css",
+        "type": "css",
         "selector": "i.dr_icon.icon-basket"
     },
     "Basket": {
-        "type":"css",
+        "type": "css",
         "selector": ".dr_icon.icon-basket"
     },
     "Checkout Button": {
-        "type":"css",
+        "type": "css",
         "selector": "a.btn_checkOut"
     },
     "List of products": {
-        "selector":".col-md-9",
+        "selector": ".col-md-9",
         "items": "a.dr_productName"
     },
     "Selected Filters Title": {
-        "type":"css",
+        "type": "css",
         "selector": "#dr_selectedFacets"
     },
     "List Of Usb Products": {
         "isCollection": true,
         "type": "css",
         "selector": "a.dr_productName"
+    },
+    "|List Of Products":{
+        "type": "css",
+        "selector": "#dr_products .row .row",
+        "children" : {
+            "Title": {
+                "type": "css",
+                "selector": ".prod-list-head"
+            }
+        }
     }
-
-
 }
