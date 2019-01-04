@@ -8,12 +8,49 @@ const tabWaiter = require(path.resolve(`./test/SanDisk/waiters/tabWaiter.js`));
 
 let getPageObjectElement = async (alias) => {
   let pageElement = (await pageSelector.getPage())[alias];
+  if (alias.includes(`>`)) {
+    const elements = alias.split(` > `);
+    const firstPO = (await pageSelector.getPage())[elements.shift()];
+    const firstElement = await getElement(firstPO);
+    return getNestedElement(firstPO, firstElement, elements);
+  } else {
+    return getElement(pageElement);
+  }
+};
+
+let getElement = async (pageElement) => {
   if (pageElement[`isCollection`]) {
     pageElement = element.all(by.css(pageElement.selector));
     return pageElement;
   } else {
     pageElement = element(by.css(pageElement.selector));
     return pageElement;
+  }
+};
+
+let getNestedElement = async (parentPO, currElement, nestedPO) => {
+  if (nestedPO.length === 0) {
+    return currElement;
+  } else {
+    let result = [];
+    let currPageElement = parentPO.children[nestedPO.shift()];
+    if (!Array.isArray(currElement)) {
+      if (currPageElement[`isCollection`]) {
+        result = await currElement.$$(currPageElement.selector);
+      } else {
+        result = await currElement.$(currPageElement.selector);
+      }
+      return getNestedElement(currPageElement, result, nestedPO);
+    } else {
+      for (let i = 0; i < currElement.length; i++) {
+        if (currPageElement[`isCollection`]) {
+          result.concat(await currElement[i].$$(currPageElement.selector));
+        } else {
+          result.push(await currElement[i].$(currPageElement.selector));
+        }
+      };
+      return getNestedElement(currPageElement, result, nestedPO);
+    }
   }
 };
 
@@ -50,17 +87,17 @@ let tabCondition = (number) => {
   if (isNaN(number)) {
     switch (number) {
       case `previous`:
-        expectedConditionFunction = tabWaiter.waitPrevTab.bind();
+        expectedConditionFunction = tabWaiter.waitForPrevTab.bind();
         break;
       case `next`:
-        expectedConditionFunction = tabWaiter.waitNextTab.bind();
+        expectedConditionFunction = tabWaiter.waitForNextTab.bind();
         break;
       default:
         logger.error(`Wrong tab position provided: [${number}]`);
         throw new Error(`Wrong tab position provided.`);
     }
   } else {
-    expectedConditionFunction = tabWaiter.waitCertainTab.bind({ "number": number });
+    expectedConditionFunction = tabWaiter.waitForCertainTab.bind({ "number": number });
   }
   return expectedConditionFunction;
 };
@@ -108,5 +145,4 @@ module.exports = {
   tabCondition,
   getTab,
   getElementFromCollectionByText
-
 };

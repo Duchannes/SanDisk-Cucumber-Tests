@@ -6,7 +6,7 @@
     "shoppingCartItem": {
         "isCollection": true,
         "type": "css",
-        "selector": "tbody> tr[class*=dr]"
+        "selector": "tbody > tr[class*=dr]"
     },
     "itemName": {
         "isCollection": true,

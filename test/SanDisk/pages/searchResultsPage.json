@@ -1,0 +1,7 @@
+{
+    "List of products by search":{
+        "isCollection": true,
+        "type": "css",
+        "selector": "a.dr_productName"
+    }
+}

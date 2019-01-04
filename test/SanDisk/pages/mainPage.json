@@ -27,5 +27,4 @@
         "type": "css",
         "selector": "ul[class*='nav'] a[href*='where']"
     }
-    
 }
