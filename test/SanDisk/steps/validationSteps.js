@@ -39,7 +39,6 @@ Then(/^Count of "([^"]*)" should( not)? be "([^"]*)"$/, async (alias, notArg, ex
   }
 });
 
-// TODO
 Then(/^"([^"]*)" should( not)? be visible$/, async (alias, notArg) => {
   notArg = notArg ? ` not` : ``;
   logger.info(`${alias} should ${notArg} be visible`);
