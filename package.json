@@ -5,11 +5,10 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "webdriver-manager update --gecko=false",
-    "preinstall": "mkdir reports && mkdir logs",
-    "sd": "protractor ./test/SanDisk/config/config.js",
-    "sd:update": "node ./node_modules/protractor/bin/webdriver-manager update --gecko=false",
-    "sd:start-server": "start cmd /k \"node_modules\\.bin\\webdriver-manager start\"",
-    "sd:generate-report": "node ./test/SanDisk/config/reporter.js"
+    "e2e": "protractor ./test/SanDisk/config/config.js",
+    "e2e:update": "node ./node_modules/protractor/bin/webdriver-manager update --gecko=false",
+    "e2e:start-server": "start cmd /k \"node_modules\\.bin\\webdriver-manager start\"",
+    "e2e:generate-report": "node ./test/SanDisk/config/reporter.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +24,7 @@
     "chai": "^4.1.2",
     "cucumber": "^5.0.3",
     "cucumber-html-reporter": "^4.0.4",
+    "fs-extra": "^7.0.1",
     "protractor": "^5.4.2",
     "protractor-cucumber-framework": "^6.1.1",
     "winston": "^3.1.0",

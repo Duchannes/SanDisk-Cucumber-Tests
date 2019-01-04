@@ -1,7 +1,7 @@
 @all
 Feature: Shopping cart
 
-  @sandisk2
+  @eugene
   Scenario: Add to shopping cart and delete
     Given I open "https://www.sandisk.com/" url
     When  I click "Buy It Now"

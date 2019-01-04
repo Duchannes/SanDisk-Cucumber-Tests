@@ -4,13 +4,20 @@ const EC = protractor.ExpectedConditions;
 
 const pageSelector = require(path.resolve(`./test/SanDisk/utils/pageSelector.js`));
 const logger = require(path.resolve(`./test/SanDisk/config/loggerConfig.js`)).logger;
-<<<<<<< HEAD
-=======
-const tabWaiter = require(path.resolve(`./test/SanDisk/waiters/tabWaiter.js`));
->>>>>>> be9f501848fb7bd3ebfd398ad35627eaf7499004
 
 let getPageObjectElement = async (alias) => {
   let pageElement = (await pageSelector.getPage())[alias];
+  if (alias.includes(`>`)) {
+    const elements = alias.split(` > `);
+    const firstPO = (await pageSelector.getPage())[elements.shift()];
+    const firstElement = await getElement(firstPO);
+    return getNestedElement(firstPO, firstElement, elements);
+  } else {
+    return getElement(pageElement);
+  }
+};
+
+let getElement = async (pageElement) => {
   if (pageElement[`isCollection`]) {
     pageElement = element.all(by.css(pageElement.selector));
     return pageElement;
@@ -20,7 +27,6 @@ let getPageObjectElement = async (alias) => {
   }
 };
 
-<<<<<<< HEAD
 let nestedElement = async (parentAlias, childrenAliases, chain) => {
   let parent = (await pageSelector.getPage())[parentAlias];
   logger.debug(childrenAliases);
@@ -42,10 +48,7 @@ let nestedElement = async (parentAlias, childrenAliases, chain) => {
     return elem.click();
   }
 };
-module.exports = {
-  getPageObjectElement,
-  nestedElement
-=======
+
 let expectedCondition = (shouldBe) => {
   let expectedConditionFunction;
   switch (shouldBe) {
@@ -79,17 +82,17 @@ let tabCondition = (number) => {
   if (isNaN(number)) {
     switch (number) {
       case `previous`:
-        expectedConditionFunction = tabWaiter.waitPrevTab.bind();
+        expectedConditionFunction = tabWaiter.waitForPrevTab.bind();
         break;
       case `next`:
-        expectedConditionFunction = tabWaiter.waitNextTab.bind();
+        expectedConditionFunction = tabWaiter.waitForNextTab.bind();
         break;
       default:
         logger.error(`Wrong tab position provided: [${number}]`);
         throw new Error(`Wrong tab position provided.`);
     }
   } else {
-    expectedConditionFunction = tabWaiter.waitCertainTab.bind({ "number": number });
+    expectedConditionFunction = tabWaiter.waitForCertainTab.bind({ "number": number });
   }
   return expectedConditionFunction;
 };
@@ -136,5 +139,4 @@ module.exports = {
   tabCondition,
   getTab,
   getElementFromCollectionByText
->>>>>>> be9f501848fb7bd3ebfd398ad35627eaf7499004
 };

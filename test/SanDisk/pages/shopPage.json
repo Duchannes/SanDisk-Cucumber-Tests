@@ -1,26 +1,28 @@
 {
     "Search Icon": {
         "type": "css",
-        "selector": ".dr_icon.icon-search"
+        "selector": "i[title='search']"
     },
     "Search Field": {
         "type": "css",
         "selector": ".ui-autocomplete-input"
     },
     "Search Button": {
-        "type": "id",
-        "selector": "dr_searchbutton"
+        "type": "css",
+        "selector": "#dr_searchbutton"
     },
-    "List of products by searching": {
+    "List of products": {
         "isCollection": true,
         "type": "css",
         "selector": "a.dr_productName"
     },
     "Products Menu": {
         "type": "css",
-        "selector": "li.dropdown"
+        "selector": "li.dropdown",
+        "items": "li[id*='dr_catID']"
     },
-    "Type of Products": {
+    "List Of Products Types": {
+        "isCollection": true,
         "type": "css",
         "selector": "li[id*='dr_catID']"
     },
