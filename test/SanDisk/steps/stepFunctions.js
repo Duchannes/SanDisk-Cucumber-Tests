@@ -27,25 +27,29 @@ let getElement = async (pageElement) => {
   }
 };
 
-let nestedElement = async (parentAlias, childrenAliases, chain) => {
-  let parent = (await pageSelector.getPage())[parentAlias];
-  logger.debug(childrenAliases);
-  childrenAliases.forEach(element => {
-    if (parent.children) {
-      let names = [];
-      parent = parent.children[element];
-      names.push(parent.selector);
-      logger.debug(parent.selector);
-      childrenAliases.shift();
-      names.push(parent.selector);
-      logger.debug(names);
-      return nestedElement(parent, childrenAliases, names.join(` > `));
+let getNestedElement = async (parentPO, currElement, nestedPO) => {
+  if (nestedPO.length === 0) {
+    return currElement;
+  } else {
+    let result = [];
+    let currPageElement = parentPO.children[nestedPO.shift()];
+    if (!Array.isArray(currElement)) {
+      if (currPageElement[`isCollection`]) {
+        result = await currElement.$$(currPageElement.selector);
+      } else {
+        result = await currElement.$(currPageElement.selector);
+      }
+      return getNestedElement(currPageElement, result, nestedPO);
+    } else {
+      for (let i = 0; i < currElement.length; i++) {
+        if (currPageElement[`isCollection`]) {
+          result.concat(await currElement[i].$$(currPageElement.selector));
+        } else {
+          result.push(await currElement[i].$(currPageElement.selector));
+        }
+      };
+      return getNestedElement(currPageElement, result, nestedPO);
     }
-  });
-  if (childrenAliases.length === 0) {
-    logger.debug(names);
-    let elem = element.all(by.css(chain));
-    return elem.click();
   }
 };
 

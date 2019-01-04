@@ -4,9 +4,6 @@ let { Then } = require(`cucumber`);
 const expect = require(`chai`).expect;
 const path = require(`path`);
 
-const elementHelper = require(path.resolve(`./test/SanDisk/steps/stepFunctions.js`)).getPageObjectElement;
-const elementFinder = require(path.resolve(`./test/SanDisk/steps/stepFunctions.js`)).nestedElement;
-
 const logger = require(path.resolve(`./test/SanDisk/config/loggerConfig.js`)).logger;
 const stepFunctions = require(path.resolve(`./test/SanDisk/steps/stepFunctions.js`));
 
