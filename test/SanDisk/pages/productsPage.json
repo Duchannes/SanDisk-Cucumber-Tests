@@ -1,22 +1,20 @@
 {
     "Sort By Menu": {
-        "type": "id",
+        "type": "css",
         "selector": "#dr_ordering",
         "items":"option[value]"
     },
     "Sort By": {
-        "isCollection": true,
         "type": "css",
-        "selector": "option[value]"
+        "selector": "label.dr_catSortOptions"
     },
     "Category Title":  {
         "type": "css",
         "selector": ".dr_categoryName"
     },
     "Products Price": {
-        "isCollection": true,
         "type": "css",
-        "selector": "div.dr_price"
+        "selector": ".dr_price"
     },
     "Product Item Name": {
         "isCollection": true,
