@@ -2,14 +2,22 @@
 Feature: SHOP
 
   @eugene @eugene4
-  Scenario: Products sorting
+  Scenario Outline: Should check products menu by <Text>
     Given I open "https://www.sandisk.com/" url
     When  I click "Shop Now Reference"
       And I wait until "next" tab appears
       And I switch to "next" tab
       And I click "Products Menu"
     Then Count of "List Of Products Types" should be "9"
-    When I click text "Mobile Cards / microSD" in "Products Menu"
-    Then Text of "Category Title" should contain "Mobile Cards / microSD"
-      And I click text "Price Low to High" in "Sort By Menu"
-    Then Text of "Products Price" should sort ascending
+    When I click text "<Text>" in "Products Menu"
+    Then Text of "Category Title" should contain "<Current Text>"
+      
+  Examples:
+  | Text                          | Current Text        |  
+  | Mobile Cards / microSD        | Mobile Cards        |                               
+  | Mobile Storage                | Mobile Storage      |                
+  | USB Flash Drives              | USB Flash Drives    |                
+  | Solid State Drives            | Solid State Drives  |                        
+  | Accessories & Readers         | Accessories         |                
+  | Special Offers                | Special Offers      |       
+  | SanDisk Outlet Store          | Outlet              |
