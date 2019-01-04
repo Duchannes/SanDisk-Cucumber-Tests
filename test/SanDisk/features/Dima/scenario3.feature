@@ -1,7 +1,7 @@
 @all
 Feature: Main page
 
-@Dima3
+@Dima @Dima3
 Scenario: Check product's titles on pages
 Given I open "https://www.sandisk.com/" url
  When I click "Shop Now Reference"
