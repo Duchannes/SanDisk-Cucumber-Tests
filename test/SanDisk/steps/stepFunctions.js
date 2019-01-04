@@ -7,8 +7,6 @@ const tabWaiter = require(path.resolve(`./test/SanDisk/waiters/tabWaiter.js`));
 
 let getPageObjectElement = async (alias) => {
   let pageElement = (await pageSelector.getPage())[alias];
-  console.log(`DEBUG------|${await pageSelector.getPage()}`);
-  console.log(`DEBUG------|${await pageElement}`);
   if (alias.includes(`>`)) {
     const elements = alias.split(` > `);
     const firstPO = (await pageSelector.getPage())[elements.shift()];
