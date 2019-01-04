@@ -5,6 +5,6 @@
     },
     "Learn More Button": {
         "type": "css",
-        "selector": "div.search-result a[href $='extremepro-usb.html']"
+        "selector": "div.search-result a[href $='html']"
     }
 }

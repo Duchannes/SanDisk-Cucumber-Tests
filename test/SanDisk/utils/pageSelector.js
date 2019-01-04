@@ -21,7 +21,7 @@ const PagesEnum = {
   },
   "SHOP": {
     po: require(path.resolve(`./test/SanDisk/pages/shopPage.json`)),
-    symptomes: [/\/store\?Action=DisplayHomePage/, /\/store\/sdiskus\/home\/$/]
+    symptomes: [/\/store\?Action=DisplayHomePage/, /\/store\/sdiskus\/home\/$/, /store\/sdiskus\/en_US\/ContinueShopping/]
   },
   "SHOPPINGCART": {
     po: require(path.resolve(`./test/SanDisk/pages/shoppingCartPage.json`)),
@@ -46,6 +46,14 @@ const PagesEnum = {
   "SEARCHRESULTS": {
     po: require(path.resolve(`./test/SanDisk/pages/searchResultsPage.json`)),
     symptomes: [/\/store\/sdiskus\/search\?keywords=/]
+  },
+  "WIRELESSFLASH": {
+    po: require(path.resolve(`./test/SanDisk/pages/wirelessStickPage.json`)),
+    symptomes: [/^https:\/\/www\.sandisk\.com\/home\/mobile-device-storage\/connect-wireless-stick/]
+  },
+  "SSD": {
+    po: require(path.resolve(`./test/SanDisk/pages/ssdPage.json`)),
+    symptomes: [/\/home\/ssd$/]
   }
 };
 
