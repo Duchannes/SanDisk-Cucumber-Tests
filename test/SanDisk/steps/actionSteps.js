@@ -10,6 +10,11 @@ When(/^I click "([^"]*)"$/, async (alias) => {
   return (await stepFunctions.getPageObjectElement(alias)).click();
 });
 
+When(/^I click on "([^"]*)" element from "([^"]*)"$/, async (position, alias) => {
+  logger.info(`I click on ${position} from ${alias} `);
+  return (await stepFunctions.getSomeElementFromArray(position, alias)).click();
+});
+
 When(/^I get text in "([^"]*)"$/, async (alias) => {
   logger.info(`I click ${alias}`);
   const elements = await stepFunctions.getPageObjectElement(alias);

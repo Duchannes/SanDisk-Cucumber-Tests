@@ -25,6 +25,11 @@
     },
     "Where To Buy": {
         "type": "css",
-        "selector": "ul[class*='nav'] a[href*='where']"
+        "selector": ".btn.actionItem.bg-red"
+    },
+    "|Title Menu":{
+        "type": "css",
+        "selector": ".navbar-nav",
+        "items": "li"
     }
 }
