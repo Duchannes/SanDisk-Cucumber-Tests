@@ -41,8 +41,9 @@ When(/^I type "([^"]*)" at "([^"]*)"$/, async (text, alias) => {
 });
 
 When(/^I click "([^"]*)" in "([^"]*)"$/, async (text, alias) => {
-  logger.info(`I click [${text}] text in [${alias}]`);
+  logger.info(`I click [${text}] in [${alias}]`);
   const el = await stepFunctions.getElementFromCollectionByText(alias, text);
+  browser.executeScript(`arguments[0].scrollIntoView()`, el);
   return el.click();
 });
 
@@ -76,4 +77,9 @@ Then(/^"([^"]*)" should( not)? be visible$/, async (alias, notArg) => {
   let element = await stepFunctions.getPageObjectElement(alias);
   let result = await element.isPresent();
   return expect(result).to.be.equal(!notArg);
+});
+
+Then(/^"([^"]*)" should be equal to "([^"]*)"$/, async (alias, text) => {
+  let element = await stepFunctions.getPageObjectElement(alias);
+  return expect(await element.getText()).to.be.equal(text);
 });

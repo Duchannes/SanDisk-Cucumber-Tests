@@ -11,11 +11,6 @@
         "type": "id",
         "selector": "dr_searchbutton"
     },
-    "List of products": {
-        "isCollection": true,
-        "type": "css",
-        "selector": "a.dr_productName"
-    },
     "Products Menu": {
         "type": "css",
         "selector": "li.dropdown",

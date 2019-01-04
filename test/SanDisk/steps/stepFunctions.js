@@ -94,6 +94,7 @@ let getElementFromCollectionByText = async (alias, text) => {
   const items = await element.$$(itemsLocator);
   for (let i = 0; i < items.length; i++) {
     const itemText = await items[i].getText();
+    logger.debug(itemText);
     if (text === itemText) {
       return items[i];
     }

@@ -38,5 +38,13 @@
     "Checkout Button": {
         "type":"css",
         "selector": "a.btn_checkOut"
+    },
+    "List of products": {
+        "isCollection":true,
+        "type": "css",
+        "items": "a.dr_productName"
+    },
+    "BLACK":{
+        "selector":"a.dr_productName[href *='5217951800']"
     }
 }

@@ -17,7 +17,7 @@ const PagesEnum = {
   },
   "PRODUCT": {
     po: require(path.resolve(`./test/SanDisk/pages/productPage.json`)),
-    symptomes: [/\/store\/sdiskus\/en_US\/pd\/productID/, /shop\.sandisk\.com\/store\?Action=pd&Locale=en_US/]
+    symptomes: [/\/store\/sdiskus\/pd\/productID/, /shop\.sandisk\.com\/store\?Action=pd&Locale=en_US/]
   },
   "SHOP": {
     po: require(path.resolve(`./test/SanDisk/pages/shopPage.json`)),
@@ -29,7 +29,7 @@ const PagesEnum = {
   },
   "USBFLASH": {
     po: require(path.resolve(`./test/SanDisk/pages/usbFlashPage.json`)),
-    symptomes: [/\/home\/usb-flash\/$/]
+    symptomes: [/\/home\/usb-flash$/]
   },
   "USBFLASHPRODUCT": {
     po: require(path.resolve(`./test/SanDisk/pages/usbFlashProductPage.json`)),

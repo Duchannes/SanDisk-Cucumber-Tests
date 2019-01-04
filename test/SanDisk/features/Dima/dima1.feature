@@ -9,3 +9,5 @@ Given I open "https://www.sandisk.com/" url
   And I switch to "next" tab
   And I click "Products Menu"
   And I click "Music | Video" in "Products Menu"
+  And I click "BLACK"
+Then "Product Name" should be equal to "SanDisk Clip Sport Plus"
