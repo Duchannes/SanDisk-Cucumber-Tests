@@ -27,45 +27,6 @@
         "type": "css",
         "selector": "ul[class*='nav'] a[href*='where']"
     },
-    "Body":{
-        "type": "css",
-        "selector": "body",
-        "children" : {
-            "Title Menu":{
-                "type": "css",
-                "selector": ".navbar-nav",
-                "children" : {
-                    "Menu Option":{
-                        "isCollection": true,
-                        "type": "css",
-                        "selector": "li",
-                        "children" : {
-                            "Link":{
-                                "type": "css",
-                                "selector": "a"
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    },
-    "Body1":{
-        "type": "css",
-        "selector": "body",
-        "children" : {
-            "Title Menu":{
-                "type": "css",
-                "selector": ".navbar-nav",
-                "children" : {
-                    "Link":{
-                        "type": "css",
-                        "selector": "a[href*='ssd']"                        
-                    }
-                }
-            }
-        }
-    },
     "Find The Right Fit":{
         "type": "css",
         "selector": "span.btn"
