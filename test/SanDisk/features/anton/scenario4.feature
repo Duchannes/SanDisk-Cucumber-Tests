@@ -1,6 +1,6 @@
 @all
-@anton @anton1
-Feature: Buy item
+@anton @anton4
+Feature: Promocode
 
   Scenario: Add and delete item to basket
     Given I open "https://www.sandisk.com/" url
@@ -15,6 +15,7 @@ Feature: Buy item
     When I click "Basket Icon"
       And I click "View Cart Button"
     Then Page title should contain "Shopping Cart"
-      And Count of "Shopping Cart Items" should be "1"
-    When I click "Delete Product Icon"
-    Then Count of "Shopping Cart Items" should be "0"
+    When I click "Promocode Area > Link"
+      And I type "WRONGPROMO" in "Promocode Area > Code Field"
+      And I click "Promocode Area > Apply Button"
+    Then Text of "Promocode Area > Message Area" should contain "Invalid promo code"

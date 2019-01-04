@@ -24,5 +24,31 @@
     "SanDisk Image": {
         "type": "css",
         "selector": "#dr_homeLink"
+    },
+    "Checkout Button": {
+        "type": "css",
+        "selector": "#dr_checkoutButton"
+    },
+    "Promocode Area": {
+        "type": "css",
+        "selector": ".dr_couponCode",
+        "children" : {
+            "Link": {
+                "type": "css",
+                "selector": "a"
+            },
+            "Code Field": {
+                "type": "css",
+                "selector": "input[name='couponCode']"
+            },
+            "Apply Button": {
+                "type": "css",
+                "selector": ".dr_button"
+            },
+            "Message Area": {
+                "type": "css",
+                "selector": "span"
+            }
+        }
     }
 }

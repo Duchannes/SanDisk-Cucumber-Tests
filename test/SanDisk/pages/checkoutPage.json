@@ -1,1 +1,20 @@
-{}
+{
+  "Checkout As Guest Button": {
+    "type": "css",
+    "selector": "#btnCheckoutAsGuest"
+  },
+  "Billing Information": {
+    "type": "css",
+    "selector": "#dr_billing"
+  },
+  "Promocode Area": {
+    "type": "css",
+    "selector": ".dr_couponCode",
+    "children" : {
+        "Message Area": {
+            "type": "css",
+            "selector": "span"
+        }
+    }
+}
+}

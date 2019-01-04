@@ -9,7 +9,7 @@ const PagesEnum = {
   },
   "CHECKOUT": {
     po: require(path.resolve(`./test/SanDisk/pages/checkoutPage.json`)),
-    symptomes: [/\/store\/sdiskus\/en_US\/DisplayThreePgCheckoutAddressPaymentInfoPage\//]
+    symptomes: [/\/store\/sdiskus\/en_US\/DisplayThreePgCheckoutAddressPaymentInfoPage\//, /https:\/\/shop\.sandisk\.com\/store\/$/]
   },
   "PRODUCTS": {
     po: require(path.resolve(`./test/SanDisk/pages/productsPage.json`)),
