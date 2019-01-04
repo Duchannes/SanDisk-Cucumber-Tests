@@ -1,16 +1,16 @@
 /* eslint-disable no-undef */
-async function waitCertainTab () {
+async function waitForCertainTab () {
   return (await browser.getAllWindowHandles()).length.toString() === this.number;
 };
 
-async function waitNextTab () {
+async function waitForNextTab () {
   const currTab = await browser.getWindowHandle();
   const allTabs = await browser.getAllWindowHandles();
   const currTabIndex = allTabs.indexOf(currTab);
   return (await browser.getAllWindowHandles())[currTabIndex + 1];
 };
 
-async function waitPrevTab () {
+async function waitForPrevTab () {
   const currTab = await browser.getWindowHandle();
   const allTabs = await browser.getAllWindowHandles();
   const currTabIndex = allTabs.indexOf(currTab);
@@ -18,7 +18,7 @@ async function waitPrevTab () {
 };
 
 module.exports = {
-  waitCertainTab,
-  waitNextTab,
-  waitPrevTab
+  waitForCertainTab,
+  waitForNextTab,
+  waitForPrevTab
 };
