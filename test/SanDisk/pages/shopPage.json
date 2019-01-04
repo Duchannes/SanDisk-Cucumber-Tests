@@ -49,5 +49,9 @@
     "View Cart Button": {
         "type": "css",
         "selector": ".btn_viewCart"
+    },
+    "Capacity List":{
+        "selector":"div.dr_facetName",
+        "items":"li.dr_facetValue"
     }
 }

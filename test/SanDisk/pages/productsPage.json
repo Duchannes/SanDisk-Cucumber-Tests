@@ -1,22 +1,20 @@
 {
     "Sort By Menu": {
-        "type": "id",
+        "type": "css",
         "selector": "#dr_ordering",
         "items":"option[value]"
     },
     "Sort By": {
-        "isCollection": true,
         "type": "css",
-        "selector": "option[value]"
+        "selector": "label.dr_catSortOptions"
     },
     "Category Title":  {
         "type": "css",
         "selector": ".dr_categoryName"
     },
     "Products Price": {
-        "isCollection": true,
         "type": "css",
-        "selector": "div.dr_price"
+        "selector": ".dr_price"
     },
     "Product Item Name": {
         "isCollection": true,
@@ -40,9 +38,19 @@
         "type":"css",
         "selector": "a.btn_checkOut"
     },
+    "List of products": {
+        "selector":".col-md-9",
+        "items": "a.dr_productName"
+    },
     "Selected Filters Title": {
         "type":"css",
         "selector": "#dr_selectedFacets"
+    },
+    "List Of Usb Products": {
+        "isCollection": true,
+        "type": "css",
+        "selector": "a.dr_productName"
     }
+
 
 }

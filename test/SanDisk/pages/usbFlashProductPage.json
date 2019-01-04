@@ -1,26 +1,20 @@
 {
     "Select Region":{
-        "type":"id",
-        "selector":"region"
+        "type":"css",
+        "selector":"#region",
+        "items":"option[value*='object']"
     },
-
     "Select Area":{
-        "type":"id",
-        "selector":"country-box"
-    },
-
-    "Option Europe":{
         "type":"css",
-        "selector":"option[label= 'Europe']"
+        "selector":"#country-box",
+        "items":"option[value*='object']"
     },
-
-    "Option Belarus":{
-        "type":"css",
-        "selector":"option[label= 'Belarus']"
-    },
-    
     "Result Found Title":{
         "type":"css",
         "selector":"h3.ng-binding"
+    },
+    "Where To Buy":{
+        "type":"css",
+        "selector":"[href='#where-to-buy']"
     }
 }

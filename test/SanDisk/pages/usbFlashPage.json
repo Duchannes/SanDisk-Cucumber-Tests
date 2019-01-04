@@ -3,8 +3,18 @@
         "type": "css",
         "selector": "label [value*=wireless]"
     },
-    "Learn More Button": {
-        "type": "css",
-        "selector": "div.search-result a[href $='extremepro-usb.html']"
+    "List Of Usb Flash": {
+        "isCollection": true,
+        "selector": ".results-display.ng-scope",
+        "children": {
+            "Title": {
+                "type": "css",
+                "selector": "h4.ng-binding"
+            },
+            "Button": {
+                "type": "css",
+                "selector": "a[class = 'btn actionItem']"
+            }
+        }
     }
 }

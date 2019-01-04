@@ -1,37 +1,29 @@
 {
-    "SanDisk Image":{
-        "type" : "css",
-        "selector" : "a[href = \"/\"]>img"
+    "SanDisk Image": {
+        "type": "css",
+        "selector": "a[href = \"/\"]>img"
     },
-    "Usb Flash Reference":{
+    "Usb Flash Reference": {
         "type": "css",
         "selector": ".navbar a[href*='usb']"
     },
-    "Ssd Reference":{
+    "Ssd Reference": {
         "type": "css",
-        "selector":".navbar a[href*='ssd']"
+        "selector": ".navbar a[href*='ssd']"
     },
-    "Shop Now Reference":{
+    "Shop Now Reference": {
         "type": "css",
-        "selector" : ".navbar [href*='shop']"
+        "selector": ".navbar [href*='shop']"
     },
-    "Extreme Reference":{
+    "Extreme Reference": {
         "type": "css",
-        "selector" : ".navbar [href*='extreme']"
+        "selector": "[href*='extreme']"
     },
-    "To Find A Store Text":{
-        "type":"css",
-        "selector":"h3.no-caps"
-    },
-    "Where To Buy":{
+    "To Find A Store Text": {
         "type": "css",
-        "selector": "ul[class*='nav'] a[href*='where']"
+        "selector": "h3.no-caps"
     },
-    "Find The Right Fit":{
-        "type": "css",
-        "selector": "span.btn"
-    },
-    "Buy It Now":{
+    "Where To Buy": {
         "type": "css",
         "selector": ".btn.actionItem.bg-red"
     },
