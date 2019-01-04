@@ -55,5 +55,15 @@
     "Mini Cart Text": {
         "type": "css",
         "selector": "#dr_miniCartDisplay span"
+    },
+    "|List Of Products":{
+        "type": "css",
+        "selector": "#dr_products .row .row",
+        "children" : {
+            "Title": {
+                "type": "css",
+                "selector": ".prod-list-head"
+            }
+        }
     }
 }

@@ -3,7 +3,6 @@
 let { Then } = require(`cucumber`);
 const expect = require(`chai`).expect;
 const path = require(`path`);
-
 const logger = require(path.resolve(`./test/SanDisk/config/loggerConfig.js`)).logger;
 const stepFunctions = require(path.resolve(`./test/SanDisk/steps/stepFunctions.js`));
 
@@ -13,6 +12,19 @@ Then(/^Text of "([^"]*)" should( not)? contain "([^"]*)"$/, async (alias, notArg
   let elementText = await element.getText();
   logger.info(`Text of ${alias} should ${notArg} contain ${textToContain}`);
   return expect(elementText.toLowerCase()).to.include(textToContain.toLowerCase());
+});
+
+Then(/^Text of each "([^"]*)" should( not)? contain "([^"]*)"$/, async (alias, notArg, textToContain) => {
+  notArg = notArg ? ` not` : ``;
+  let elements = await stepFunctions.getPageObjectElement(alias);
+  let wrongStrings = [];
+  for (let i = 0; i < elements.length; i++) {
+    if (!(await elements[i].getText()).includes(textToContain)) {
+      wrongStrings.push(await elements[i].getText());
+    }
+  }
+  logger.info(`Text of each ${alias} should${notArg} contain ${textToContain}`);
+  return wrongStrings.length ? Promise.reject(new Error(`Strings not containing "${textToContain}":\n${wrongStrings.join(`\n`)}`)) : Promise.resolve();
 });
 
 Then(/^Page title should( not)? contain "([^"]*)"$/, async (notArg, text) => {
