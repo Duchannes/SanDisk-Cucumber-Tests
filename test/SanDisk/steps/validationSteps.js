@@ -44,7 +44,7 @@ When(/^I write "([^"]*)" at "([^"]*)"$/, async (text, alias) => {
 When(/^I click "([^"]*)" in "([^"]*)"$/, async (text, alias) => {
   logger.info(`I click [${text}] text in [${alias}]`);
   const el = await stepFunctions.getElementFromCollectionByText(alias, text);
-  console.log(await el);
+  // console.log(await el);
   return el.click();
 });
 

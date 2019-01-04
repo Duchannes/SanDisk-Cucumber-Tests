@@ -10,7 +10,7 @@ Feature: Wireless Stick
         And I click "Products Menu"
         And I click "Special Offers" in "Products Menu"
         And I click "240GB" in "Capacity List"
+        And I wait until "Selected Filters Title" is visible
         And I click "250GB" in "Capacity List"
-        And I wait for "10" seconds
 
 

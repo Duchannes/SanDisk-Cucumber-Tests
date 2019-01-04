@@ -38,5 +38,10 @@
     "Checkout Button": {
         "type":"css",
         "selector": "a.btn_checkOut"
+    },
+    "Selected Filters Title": {
+        "type":"css",
+        "selector": "#dr_selectedFacets"
     }
+
 }
