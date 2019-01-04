@@ -1,4 +1,4 @@
-@all
+@sandisk
 @anton @anton3
 Feature: Payment Checkout
 

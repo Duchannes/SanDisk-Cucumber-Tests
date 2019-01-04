@@ -1,4 +1,4 @@
-@all
+@sandisk
 @anton @anton4
 Feature: Promocode
 

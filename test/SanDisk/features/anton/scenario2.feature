@@ -1,4 +1,4 @@
-@all
+@sandisk
 @anton @anton2 
 Feature: Search feature
   @bug

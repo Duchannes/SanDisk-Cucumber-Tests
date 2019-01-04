@@ -1,4 +1,4 @@
-@all
+@sandisk
 @anton @anton1
 Feature: Buy item
 
