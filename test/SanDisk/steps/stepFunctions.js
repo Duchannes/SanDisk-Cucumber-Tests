@@ -19,6 +19,7 @@ let getPageObjectElement = async (alias) => {
 
 let getElement = async (pageElement) => {
   if (pageElement[`isCollection`]) {
+    logger.debug(JSON.stringify(pageElement));
     pageElement = element.all(by.css(pageElement.selector));
     return pageElement;
   } else {
@@ -128,6 +129,7 @@ let getElementFromCollectionByText = async (alias, text) => {
   const itemsLocator = (await pageSelector.getPage())[alias].items;
   const element = await getPageObjectElement(alias);
   const items = await element.$$(itemsLocator);
+  logger.debug(items.length);
   for (let i = 0; i < items.length; i++) {
     const itemText = await (items[i]).getText();
     if (itemText.includes(text)) {
@@ -137,10 +139,22 @@ let getElementFromCollectionByText = async (alias, text) => {
   throw new Error(`No element with text [${text}] in [${alias}]!`);
 };
 
+let getElementByText = async (alias, text) => {
+  const titleSelector = (await pageSelector.getPage())[alias].children[`Title`].selector;
+  const buttonSelector = (await pageSelector.getPage())[alias].children[`Button`].selector;
+  const elements = await getPageObjectElement(alias);
+  for (let i = 0; i < elements.length; i++) {
+    if (await elements[i].$(titleSelector).getText() === text) {
+      return elements[i].$(buttonSelector);
+    }
+  }
+};
+
 module.exports = {
   expectedCondition,
   getPageObjectElement,
   tabCondition,
   getTab,
-  getElementFromCollectionByText
+  getElementFromCollectionByText,
+  getElementByText
 };

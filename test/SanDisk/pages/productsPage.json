@@ -38,9 +38,19 @@
         "type":"css",
         "selector": "a.btn_checkOut"
     },
+    "List of products": {
+        "selector":".col-md-9",
+        "items": "a.dr_productName"
+    },
     "Selected Filters Title": {
         "type":"css",
         "selector": "#dr_selectedFacets"
+    },
+    "List Of Usb Products": {
+        "isCollection": true,
+        "type": "css",
+        "selector": "a.dr_productName"
     }
+
 
 }

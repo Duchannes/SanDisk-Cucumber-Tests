@@ -3,7 +3,6 @@
 let { Then } = require(`cucumber`);
 const expect = require(`chai`).expect;
 const path = require(`path`);
-
 const logger = require(path.resolve(`./test/SanDisk/config/loggerConfig.js`)).logger;
 const stepFunctions = require(path.resolve(`./test/SanDisk/steps/stepFunctions.js`));
 
@@ -45,4 +44,10 @@ Then(/^"([^"]*)" should( not)? be visible$/, async (alias, notArg) => {
   let element = await stepFunctions.getPageObjectElement(alias);
   let result = await element.isPresent();
   return expect(result).to.be.equal(!notArg);
+});
+
+Then(/^"([^"]*)" should be equal to "([^"]*)"$/, async (alias, text) => {
+  logger.info(`${alias} should be qual to ${text}`);
+  let element = await stepFunctions.getPageObjectElement(alias);
+  return expect(await element.getText()).to.be.equal(text);
 });
