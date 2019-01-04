@@ -3,12 +3,12 @@
         "type" : "css",
         "selector" : "a[title = 'Remove']"
     },
-    "shoppingCartItem": {
+    "Shopping Cart Items": {
         "isCollection": true,
         "type": "css",
-        "selector": "tbody > tr[class*=dr]"
+        "selector": ".dr_odd, .dr_even"
     },
-    "itemName": {
+    "Item Name": {
         "isCollection": true,
         "type": "css",
         "selector": "td[class$=Name] > a"
@@ -20,5 +20,9 @@
     "Empty Cart": {
         "type": "css",
         "selector": "div.dr_emptyCart > h2"
+    },
+    "SanDisk Image": {
+        "type": "css",
+        "selector": "#dr_homeLink"
     }
 }

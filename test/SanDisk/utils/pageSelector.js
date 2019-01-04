@@ -45,12 +45,13 @@ const PagesEnum = {
   },
   "SEARCHRESULTS": {
     po: require(path.resolve(`./test/SanDisk/pages/searchResultsPage.json`)),
-    symptomes: [/\/store\/sdiskus\/search\?keywords=/]
+    symptomes: [/\/store\/sdiskus\/search\?keywords=/, /store\/\?Action=DisplayProductSearchResultsPage/]
   }
 };
 
 async function getPage () {
-  const currUrl = await browser.getCurrentUrl();
+  let currUrl = await browser.getCurrentUrl();
+  currUrl = currUrl.endsWith(`/`) ? currUrl : currUrl + `/`;
   logger.debug(`currurl - ${currUrl}`);
   for (const key in PagesEnum) { // Check every ENUM page
     for (let i = 0; i < PagesEnum[key].symptomes.length; i++) {

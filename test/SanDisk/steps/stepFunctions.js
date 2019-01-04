@@ -19,12 +19,32 @@ let getPageObjectElement = async (alias) => {
 
 let getElement = async (pageElement) => {
   if (pageElement[`isCollection`]) {
-    pageElement = element.all(by.css(pageElement.selector));
+    pageElement = await $$(pageElement.selector);
     return pageElement;
   } else {
-    pageElement = element(by.css(pageElement.selector));
+    pageElement = await $(pageElement.selector);
     return pageElement;
   }
+};
+
+let getSomeElementFromArray = async (position, alias) => {
+  let element;
+  const elements = await getPageObjectElement(alias);
+  if (isNaN(position)) {
+    switch (position) {
+      case `any`:
+        logger.debug(elements.length + ` Elements`);
+        const index = Math.floor(Math.random() * elements.length);
+        element = elements[index];
+        break;
+      default:
+        logger.error(`Wrong element position: [${number}]`);
+        throw new Error(`Wrong element position.`);
+    }
+  } else {
+    element = elements[position];
+  }
+  return element;
 };
 
 let getNestedElement = async (parentPO, currElement, nestedPO) => {
@@ -130,6 +150,7 @@ let getElementFromCollectionByText = async (alias, text) => {
   const items = await element.$$(itemsLocator);
   for (let i = 0; i < items.length; i++) {
     const itemText = await (items[i]).getText();
+    logger.debug(itemText + ` - Inner Element text (getElementFromCollectionByText)`);
     if (itemText.includes(text)) {
       return items[i];
     }
@@ -142,5 +163,6 @@ module.exports = {
   getPageObjectElement,
   tabCondition,
   getTab,
-  getElementFromCollectionByText
+  getElementFromCollectionByText,
+  getSomeElementFromArray
 };

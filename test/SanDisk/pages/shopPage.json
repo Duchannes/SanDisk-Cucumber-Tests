@@ -26,10 +26,16 @@
         "type": "css",
         "selector": "li[id*='dr_catID']"
     },
-    "Top Sellers Buy Now Button": {
-        "isCollection": true,
+    "|Top Sellers": {
         "type": "css",
-        "selector": ".offer-text .dr_button"
+        "selector": "#dr_topSellersOffer",
+        "children" : {
+            "Buy Now Buttons": {
+                "isCollection": true,
+                "type": "css",
+                "selector": ".dr_button"
+            }
+        }
     },
     "Basket Icon": {
         "type": "css",
@@ -39,5 +45,9 @@
         "isCollection": true,
         "type": "css",
         "selector": ".dr_prod-name"
+    },
+    "View Cart Button": {
+        "type": "css",
+        "selector": ".btn_viewCart"
     }
 }
