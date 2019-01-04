@@ -48,6 +48,7 @@ Then(/^"([^"]*)" should( not)? be visible$/, async (alias, notArg) => {
 });
 
 Then(/^"([^"]*)" should be equal to "([^"]*)"$/, async (alias, text) => {
+  logger.info(`${alias} should be qual to ${text}`);
   let element = await stepFunctions.getPageObjectElement(alias);
   return expect(await element.getText()).to.be.equal(text);
 });
