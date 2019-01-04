@@ -15,15 +15,23 @@
         "type": "css",
         "selector": ".navbar [href*='shop']"
     },
-    "Extreme Reference": {
+    "Extreme Reference":{
         "type": "css",
-        "selector": "[href*='extreme']"
+        "selector" : ".navbar [href*='extreme']"
     },
-    "To Find A Store Text": {
+    "To Find A Store Text":{
+        "type":"css",
+        "selector":"h3.no-caps"
+    },
+    "Where To Buy":{
         "type": "css",
-        "selector": "h3.no-caps"
+        "selector": "ul[class*='nav'] a[href*='where']"
     },
-    "Where To Buy": {
+    "Find The Right Fit":{
+        "type": "css",
+        "selector": "span.btn"
+    },
+    "Buy It Now":{
         "type": "css",
         "selector": ".btn.actionItem.bg-red"
     },

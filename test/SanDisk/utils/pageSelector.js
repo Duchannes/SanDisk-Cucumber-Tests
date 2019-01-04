@@ -5,7 +5,7 @@ const logger = require(path.resolve(`./test/SanDisk/config/loggerConfig.js`)).lo
 const PagesEnum = {
   "MAIN": {
     po: require(path.resolve(`./test/SanDisk/pages/mainPage.json`)),
-    symptomes: [/^https:\/\/www\.sandisk\.com\/$/, /home\/extreme-team$/]
+    symptomes: [/^https:\/\/www\.sandisk\.com\/$/, /home\/extreme-team\/$/]
   },
   "CHECKOUT": {
     po: require(path.resolve(`./test/SanDisk/pages/checkoutPage.json`)),
@@ -17,7 +17,7 @@ const PagesEnum = {
   },
   "PRODUCT": {
     po: require(path.resolve(`./test/SanDisk/pages/productPage.json`)),
-    symptomes: [/\/store\/sdiskus\/en_US\/pd\/productID/, /\/\/shop\.sandisk\.com\/store\/sdiskus\/pd\/productID/]
+    symptomes: [/\/store\/sdiskus\/en_US\/pd\/productID/, /\/\/shop\.sandisk\.com\/store\/sdiskus\/pd\/productID/, /\/store\?Action=pd/]
   },
   "SHOP": {
     po: require(path.resolve(`./test/SanDisk/pages/shopPage.json`)),
@@ -37,7 +37,7 @@ const PagesEnum = {
   },
   "WHERETOBY": {
     po: require(path.resolve(`./test/SanDisk/pages/whereToBuyPage.json`)),
-    symptomes: [/\/about\/where-to-buy$/]
+    symptomes: [/\/about\/where-to-buy\/$/]
   },
   "PRODUCTCOMPATIBILITTOOL": {
     po: require(path.resolve(`./test/SanDisk/pages/productCompatibilityToolPage.json`)),
