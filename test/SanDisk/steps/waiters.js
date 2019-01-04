@@ -8,7 +8,7 @@ const CLICKABLE_TIMEOUT = 20 * 1000;
 
 When(/^I wait until "([^"]*)" is (visible|clickable|invisible|gone|present)$/, async (alias, shouldBe) => {
   let element = await stepFunctions.getPageObjectElement(alias);
-  logger.debug(element);
+  logger.debug(await element.getText());
   let expectedConditionFunction = stepFunctions.expectedCondition(shouldBe);
   logger.info(`I wait until ${alias} is ${shouldBe}`);
   return browser.wait(expectedConditionFunction(element), CLICKABLE_TIMEOUT);

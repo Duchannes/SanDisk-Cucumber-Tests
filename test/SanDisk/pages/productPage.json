@@ -26,5 +26,8 @@
     "Icon Basket": {
         "type":"css",
         "selector": "i.dr_icon.icon-basket"
+    },
+    "Product Name":{
+        "selector":"form h3"
     }
 }

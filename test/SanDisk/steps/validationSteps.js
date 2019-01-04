@@ -43,7 +43,7 @@ Then(/^Count of "([^"]*)" should( not)? be "([^"]*)"$/, async (alias, notArg, ex
   let element = await stepFunctions.getPageObjectElement(alias);
   let result = await element.length;
   expectedNumber = parseInt(expectedNumber);
-  logger.info(`Count of ${alias} should ${notArg} be ${expectedNumber}`);
+  logger.info(`Count of ${alias} should${notArg} be ${expectedNumber}`);
   if (notArg) {
     return expect(result).to.not.equal(expectedNumber);
   } else {
@@ -53,8 +53,14 @@ Then(/^Count of "([^"]*)" should( not)? be "([^"]*)"$/, async (alias, notArg, ex
 
 Then(/^"([^"]*)" should( not)? be visible$/, async (alias, notArg) => {
   notArg = notArg ? ` not` : ``;
-  logger.info(`${alias} should ${notArg} be visible`);
+  logger.info(`${alias} should${notArg} be visible`);
   let element = await stepFunctions.getPageObjectElement(alias);
   let result = await element.isPresent();
   return expect(result).to.be.equal(!notArg);
+});
+
+Then(/^"([^"]*)" should be equal to "([^"]*)"$/, async (alias, text) => {
+  logger.info(`${alias} should be qual to ${text}`);
+  let element = await stepFunctions.getPageObjectElement(alias);
+  return expect(await element.getText()).to.be.equal(text);
 });

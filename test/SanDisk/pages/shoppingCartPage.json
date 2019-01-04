@@ -3,12 +3,12 @@
         "type" : "css",
         "selector" : "a[title = 'Remove']"
     },
-    "shoppingCartItem": {
+    "Shopping Cart Items": {
         "isCollection": true,
         "type": "css",
-        "selector": "tbody > tr[class*=dr]"
+        "selector": ".dr_odd, .dr_even"
     },
-    "itemName": {
+    "Item Name": {
         "isCollection": true,
         "type": "css",
         "selector": "td[class$=Name] > a"
@@ -20,5 +20,35 @@
     "Empty Cart": {
         "type": "css",
         "selector": "div.dr_emptyCart > h2"
+    },
+    "SanDisk Image": {
+        "type": "css",
+        "selector": "#dr_homeLink"
+    },
+    "Checkout Button": {
+        "type": "css",
+        "selector": "#dr_checkoutButton"
+    },
+    "Promocode Area": {
+        "type": "css",
+        "selector": ".dr_couponCode",
+        "children" : {
+            "Link": {
+                "type": "css",
+                "selector": "a"
+            },
+            "Code Field": {
+                "type": "css",
+                "selector": "input[name='couponCode']"
+            },
+            "Apply Button": {
+                "type": "css",
+                "selector": ".dr_button"
+            },
+            "Message Area": {
+                "type": "css",
+                "selector": "span"
+            }
+        }
     }
 }

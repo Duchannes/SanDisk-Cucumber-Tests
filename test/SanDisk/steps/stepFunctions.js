@@ -21,12 +21,32 @@ let getPageObjectElement = async (alias) => {
 
 let getElement = async (pageElement) => {
   if (pageElement[`isCollection`]) {
-    pageElement = element.all(by.css(pageElement.selector));
+    pageElement = await $$(pageElement.selector);
     return pageElement;
   } else {
-    pageElement = element(by.css(pageElement.selector));
+    pageElement = await $(pageElement.selector);
     return pageElement;
   }
+};
+
+let getSomeElementFromArray = async (position, alias) => {
+  let element;
+  const elements = await getPageObjectElement(alias);
+  if (isNaN(position)) {
+    switch (position) {
+      case `any`:
+        logger.debug(elements.length + ` Elements`);
+        const index = Math.floor(Math.random() * elements.length);
+        element = elements[index];
+        break;
+      default:
+        logger.error(`Wrong element position: [${number}]`);
+        throw new Error(`Wrong element position.`);
+    }
+  } else {
+    element = elements[position];
+  }
+  return element;
 };
 
 let getNestedElement = async (parentPO, currElement, nestedPO) => {
@@ -130,8 +150,10 @@ let getElementFromCollectionByText = async (alias, text) => {
   const itemsLocator = (await pageSelector.getPage())[alias].items;
   const element = await getPageObjectElement(alias);
   const items = await element.$$(itemsLocator);
+  logger.debug(items.length);
   for (let i = 0; i < items.length; i++) {
     const itemText = await (items[i]).getText();
+    logger.debug(itemText + ` - Inner Element text (getElementFromCollectionByText)`);
     if (itemText.includes(text)) {
       return items[i];
     }
@@ -139,10 +161,23 @@ let getElementFromCollectionByText = async (alias, text) => {
   throw new Error(`No element with text [${text}] in [${alias}]!`);
 };
 
+let getElementByText = async (alias, text) => {
+  const titleSelector = (await pageSelector.getPage())[alias].children[`Title`].selector;
+  const buttonSelector = (await pageSelector.getPage())[alias].children[`Button`].selector;
+  const elements = await getPageObjectElement(alias);
+  for (let i = 0; i < elements.length; i++) {
+    if (await elements[i].$(titleSelector).getText() === text) {
+      return elements[i].$(buttonSelector);
+    }
+  }
+};
+
 module.exports = {
   expectedCondition,
   getPageObjectElement,
   tabCondition,
   getTab,
-  getElementFromCollectionByText
+  getElementFromCollectionByText,
+  getSomeElementFromArray,
+  getElementByText
 };

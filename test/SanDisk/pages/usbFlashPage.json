@@ -6,5 +6,19 @@
     "Learn More Button": {
         "type": "css",
         "selector": "div.search-result a[href $='html']"
+    },
+    "List Of Usb Flash": {
+        "isCollection": true,
+        "selector": ".results-display.ng-scope",
+        "children": {
+            "Title": {
+                "type": "css",
+                "selector": "h4.ng-binding"
+            },
+            "Button": {
+                "type": "css",
+                "selector": "a[class = 'btn actionItem']"
+            }
+        }
     }
 }

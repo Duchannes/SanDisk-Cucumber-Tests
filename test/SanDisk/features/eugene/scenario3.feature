@@ -15,6 +15,5 @@ Feature: Find the right feet
       And I click text "Game Consoles" in "Select Device Type"
       And I wait until "GO Button" is clickable
       And I click "GO Button"
-      And I wait for "5" 
     Then Count of "Products" should be "2"
   

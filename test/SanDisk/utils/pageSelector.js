@@ -9,7 +9,7 @@ const PagesEnum = {
   },
   "CHECKOUT": {
     po: require(path.resolve(`./test/SanDisk/pages/checkoutPage.json`)),
-    symptomes: [/\/store\/sdiskus\/en_US\/DisplayThreePgCheckoutAddressPaymentInfoPage\//]
+    symptomes: [/\/store\/sdiskus\/en_US\/DisplayThreePgCheckoutAddressPaymentInfoPage\//, /https:\/\/shop\.sandisk\.com\/store\/$/]
   },
   "PRODUCTS": {
     po: require(path.resolve(`./test/SanDisk/pages/productsPage.json`)),
@@ -45,7 +45,7 @@ const PagesEnum = {
   },
   "SEARCHRESULTS": {
     po: require(path.resolve(`./test/SanDisk/pages/searchResultsPage.json`)),
-    symptomes: [/\/store\/sdiskus\/search\?keywords=/]
+    symptomes: [/\/store\/sdiskus\/search\?keywords=/, /store\/\?Action=DisplayProductSearchResultsPage/]
   },
   "WIRELESSFLASH": {
     po: require(path.resolve(`./test/SanDisk/pages/wirelessStickPage.json`)),
@@ -58,7 +58,8 @@ const PagesEnum = {
 };
 
 async function getPage () {
-  const currUrl = await browser.getCurrentUrl();
+  let currUrl = await browser.getCurrentUrl();
+  currUrl = currUrl.endsWith(`/`) ? currUrl : currUrl + `/`;
   logger.debug(`currurl - ${currUrl}`);
   for (const key in PagesEnum) { // Check every ENUM page
     for (let i = 0; i < PagesEnum[key].symptomes.length; i++) {
