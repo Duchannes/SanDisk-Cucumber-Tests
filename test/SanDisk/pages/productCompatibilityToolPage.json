@@ -13,9 +13,9 @@
         "type":"css",
         "selector":"#btn5"
     },
-    "List of products":{
+    "Products":{
+        "isCollection": true,
         "type":"css",
-        "selector":"#btn5",
-        "items":"#types5 > option[value]"
+        "selector":".datacont"
     }
 }

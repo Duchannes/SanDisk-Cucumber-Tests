@@ -1,15 +1,15 @@
 {
     "Search Icon": {
         "type": "css",
-        "selector": ".dr_icon.icon-search"
+        "selector": "i[title='search']"
     },
     "Search Field": {
         "type": "css",
         "selector": ".ui-autocomplete-input"
     },
     "Search Button": {
-        "type": "id",
-        "selector": "dr_searchbutton"
+        "type": "css",
+        "selector": "#dr_searchbutton"
     },
     "List of products": {
         "isCollection": true,
@@ -20,6 +20,11 @@
         "type": "css",
         "selector": "li.dropdown",
         "items": "li[id*='dr_catID']"
+    },
+    "List Of Products Types": {
+        "isCollection": true,
+        "type": "css",
+        "selector": "li[id*='dr_catID']"
     },
     "Top Sellers Buy Now Button": {
         "isCollection": true,
