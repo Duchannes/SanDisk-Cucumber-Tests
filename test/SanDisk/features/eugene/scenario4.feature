@@ -8,7 +8,7 @@ Feature: SHOP
       And I wait until "next" tab appears
       And I switch to "next" tab
       And I click "Products Menu"
-    Then Count of "List Of Products Types" should be "9"
+    Then Count of "List Of Products Types" should not be "0"
     When I click text "<Text>" in "Products Menu"
     Then Text of "Category Title" should contain "<Current Text>"
       

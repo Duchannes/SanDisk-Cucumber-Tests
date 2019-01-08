@@ -10,6 +10,7 @@ Feature: Shopping cart
     Then "Product Information" should be visible
       And I click "Select Size"
       And I click "Select Option"
+      And I wait for "3" seconds
       And I wait until "Stock Message" is present
     Then Text of "Stock Message" should contain "Stock"
     When I click "Buy Now Button"

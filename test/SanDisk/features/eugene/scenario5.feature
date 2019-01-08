@@ -11,4 +11,4 @@ Feature: SHOP
     Then "Search Field" should be visible
     When I type "iPad" in "Search Field"
       And I click "Search Button"
-    Then Count of "List of products by search" should be "10"
+    Then Count of "List of products by search" should not be "0"

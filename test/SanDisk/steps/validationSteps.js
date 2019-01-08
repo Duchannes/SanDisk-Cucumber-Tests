@@ -5,6 +5,7 @@ const expect = require(`chai`).expect;
 const path = require(`path`);
 const logger = require(path.resolve(`./test/SanDisk/config/loggerConfig.js`)).logger;
 const stepFunctions = require(path.resolve(`./test/SanDisk/steps/stepFunctions.js`));
+const CLICKABLE_TIMEOUT = 20 * 1000;
 
 Then(/^Text of "([^"]*)" should( not)? contain "([^"]*)"$/, async (alias, notArg, textToContain) => {
   notArg = notArg ? ` not` : ``;
@@ -51,12 +52,12 @@ Then(/^Count of "([^"]*)" should( not)? be "([^"]*)"$/, async (alias, notArg, ex
   }
 });
 
-Then(/^"([^"]*)" should( not)? be visible$/, async (alias, notArg) => {
+Then(/^"([^"]*)" should( not)? be (visible|clickable|invisible|gone|present)$/, async (alias, notArg, shouldBe) => {
   notArg = notArg ? ` not` : ``;
-  logger.info(`${alias} should${notArg} be visible`);
   let element = await stepFunctions.getPageObjectElement(alias);
-  let result = await element.isPresent();
-  return expect(result).to.be.equal(!notArg);
+  let expectedConditionFunction = stepFunctions.expectedCondition(shouldBe);
+  logger.info(`${alias} should${notArg} be ${shouldBe}`);
+  return browser.wait(expectedConditionFunction(element), CLICKABLE_TIMEOUT);
 });
 
 Then(/^"([^"]*)" should be equal to "([^"]*)"$/, async (alias, text) => {
