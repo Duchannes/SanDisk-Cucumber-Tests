@@ -1,5 +1,5 @@
 @all
-Feature: SHOP
+Feature: SHOP --> Search
 
   @eugene @eugene5
   Scenario: Searching

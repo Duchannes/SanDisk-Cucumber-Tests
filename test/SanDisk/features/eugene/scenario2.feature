@@ -9,9 +9,9 @@ Feature: Shopping cart
       And I switch to "next" tab
     Then "Product Information" should be visible
       And I click "Select Size"
+      And I wait until "Select Option" is present
       And I click "Select Option"
-      And I wait for "3" seconds
-      And I wait until "Stock Message" is present
+      And I wait until "Stock Message" is visible
     Then Text of "Stock Message" should contain "Stock"
     When I click "Buy Now Button"
     Then "Continue Shopping" should be visible

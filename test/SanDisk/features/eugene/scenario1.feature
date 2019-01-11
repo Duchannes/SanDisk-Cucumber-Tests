@@ -11,5 +11,5 @@ Feature: Where to buy
       And I wait until "Select Area" is clickable
       And I click "Select Area"
       And I click text "Belarus" in "Select Area"
-      And I wait until "Result Found Title" is present
+      And I wait until "Result Found Title" is visible
     Then Text of "Result Found Title" should contain "result found"

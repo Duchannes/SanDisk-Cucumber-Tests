@@ -1,4 +1,6 @@
 /* eslint-disable no-undef */
+"use strict";
+
 const path = require(`path`);
 const yargs = require(`yargs`).argv;
 const logger = require(path.resolve(`./test/SanDisk/config/loggerConfig.js`)).logger;
@@ -23,6 +25,7 @@ exports.config = {
   },
   onPrepare: () => {
     logger.info(`Maximizing browser window`);
+    browser.ignoreSynchronization = true;
     browser.manage().window().maximize();
   }
 };

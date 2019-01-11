@@ -2,19 +2,17 @@
 const path = require(`path`);
 const logger = require(path.resolve(`./test/SanDisk/config/loggerConfig.js`)).logger;
 
-async function manage () {
-  browser.waitForAngularEnabled(false);
-  const currUrl = await browser.getCurrentUrl();
-  if (currUrl.search(/shop\.sandisk\.com/) >= 0) {
-    browser.waitForAngularEnabled(false);
-    logger.debug(`waitForAngularEnabled = false`);
-  }
-  if (currUrl.search(/www\.sandisk\.com/) >= 0) {
-    browser.waitForAngularEnabled(true);
+let isAngular = async () => {
+  let isAngular = browser.executeScript(`return window.angular`);
+  if (isAngular) {
     logger.debug(`waitForAngularEnabled = true`);
+    return true;
+  } else {
+    logger.debug(`waitForAngularEnabled = false`);
+    return false;
   }
-}
+};
 
 module.exports = {
-  manage
+  isAngular
 };
