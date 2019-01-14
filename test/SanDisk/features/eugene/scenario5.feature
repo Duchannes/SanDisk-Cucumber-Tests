@@ -10,5 +10,6 @@ Feature: SHOP --> Search
       And I click "Search Icon"
     Then "Search Field" should be visible
     When I type "iPad" in "Search Field"
+      And I highlight "Search Button"
       And I click "Search Button"
     Then Count of "List of products by search" should not be "0"
